@@ -10,7 +10,7 @@ public class HUD : MonoBehaviour
 	private const int RESOURCE_BAR_WIDTH = 320;
 	private const int RESOURCE_BAR_HEIGHT = 120;
 
-	void Start ()
+	void Start()
 	{
 		player = transform.root.GetComponent<Player>();
 	}
