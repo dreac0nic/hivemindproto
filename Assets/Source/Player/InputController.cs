@@ -35,11 +35,26 @@ public class InputController : MonoBehaviour
 		else if(mousePos.y <= Screen.height && mousePos.y > Screen.height - Options.ScrollBorder)
 			camTransform.z += Options.ScrollSpeed;
 
+		// Test arrow controls
+		if (Input.GetKey(KeyCode.UpArrow))
+			camTransform.z += Options.ScrollSpeed;
+		if (Input.GetKey(KeyCode.DownArrow))
+			camTransform.z -= Options.ScrollSpeed;
+		if (Input.GetKey(KeyCode.LeftArrow))
+			camTransform.x -= Options.ScrollSpeed;
+		if (Input.GetKey(KeyCode.RightArrow))
+			camTransform.x += Options.ScrollSpeed;
+
 		// Retransform movement to camera's local orientation, drop vertical movement.
 		camTransform = Camera.main.transform.TransformDirection(camTransform);
 		camTransform.y = 0;
 
-		// TODO: Add abililty to zoom with Scroll Wheel
+		// Zoom with scroll wheel
+		if (Input.GetAxis("Mouse ScrollWheel") != 0)
+		{
+			float camFieldOfView = Camera.main.fieldOfView - (Options.ZoomSpeed * Input.GetAxis("Mouse ScrollWheel"));
+			Camera.main.fieldOfView = Mathf.Clamp(camFieldOfView, Options.ZoomMin, Options.ZoomMax);
+		}
 
 		// Apply the movement to current position and set camera.
 		Vector3 originalPos = Camera.main.transform.position;
