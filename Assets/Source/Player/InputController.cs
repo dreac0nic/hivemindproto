@@ -36,23 +36,17 @@ public class InputController : MonoBehaviour
 			camTransform.z += Options.ScrollSpeed;
 
 		// Test arrow controls
-		if (Input.GetKey(KeyCode.UpArrow))
-			camTransform.z += Options.ScrollSpeed;
-		if (Input.GetKey(KeyCode.DownArrow))
-			camTransform.z -= Options.ScrollSpeed;
-		if (Input.GetKey(KeyCode.LeftArrow))
-			camTransform.x -= Options.ScrollSpeed;
-		if (Input.GetKey(KeyCode.RightArrow))
-			camTransform.x += Options.ScrollSpeed;
+		camTransform.z += Input.GetAxis("Vertical") * Options.ScrollSpeed;
+		camTransform.x += Input.GetAxis("Horizontal") * Options.ScrollSpeed;
 
 		// Retransform movement to camera's local orientation, drop vertical movement.
 		camTransform = Camera.main.transform.TransformDirection(camTransform);
 		camTransform.y = 0;
 
 		// Zoom with scroll wheel
-		if (Input.GetAxis("Mouse ScrollWheel") != 0)
+		if (Input.GetAxis("Zoom") != 0)
 		{
-			float camFieldOfView = Camera.main.fieldOfView - (Options.ZoomSpeed * Input.GetAxis("Mouse ScrollWheel"));
+			float camFieldOfView = Camera.main.fieldOfView - (Options.ZoomSpeed * Input.GetAxis("Zoom"));
 			Camera.main.fieldOfView = Mathf.Clamp(camFieldOfView, Options.ZoomMin, Options.ZoomMax);
 		}
 
