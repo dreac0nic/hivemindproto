@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 using HiveMind;
+using System.Collections.Generic;
 
 public class Commander : MonoBehaviour
 {
@@ -14,33 +16,64 @@ public class Commander : MonoBehaviour
 
 	void Update()
 	{
-		// Test for clicks
-		if (Input.GetButtonDown("Move"))
+		Selector selectGroup = transform.root.GetComponent<Selector>();
+		
+		if(selectGroup)
 		{
-			RaycastHit hitInfo;
+			List<Selectable> selectedUnits = selectGroup.SelectedUnits;
 
-			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, Layers.Map))
+			// Breeding
+			foreach(Breed breedComponent in selectedUnits.Select(su => su.GetComponent<Breed>()).Where(b => b != null))
 			{
-				// Spawn a marker
-				if(!tempCircle)
+				if (Input.GetKeyDown(KeyCode.B))
 				{
-					tempCircle = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+					if (breedComponent.IsBirthing)
+						breedComponent.StopBirthing();
+					else
+						breedComponent.StartBirthing();
 				}
-				tempCircle.transform.position = hitInfo.point;
-				tempCircle.transform.localScale = new Vector3(10, 10, 10);
+			}
 
-				// Move the unit to the point
-				//moveUnit.destination = hitInfo.point;
+			// Ordering (right click)
+			if (Input.GetButtonDown("Order"))
+			{
+				GameObject pickedObject = Selector.PickObject();
+				RaycastHit hitInfo;
 
-				// Apply movement to each selected unit.
-				Selector selectGroup = transform.root.GetComponent<Selector>();
+				// If the picked object is a unit, attack it!
+				if(pickedObject.GetComponent<UnitStats>() != null)
+				{
+					foreach (Attacker attackComponent in selectedUnits.Select(su => su.GetComponent<Attacker>()).Where(a => a != null))
+					{
+						attackComponent.StartAttacking(pickedObject);
+					}
+				}
+				else if(pickedObject.GetComponent<Harvestable>() != null)
+				{
+					foreach (Harvester harvestComponent in selectedUnits.Select(su => su.GetComponent<Harvester>()).Where(h => h != null))
+					{
+						harvestComponent.StartHarvesting(pickedObject);
+					}
+				}
+				else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, Layers.Map))
+				{
+					// Spawn a marker
+					if (!tempCircle)
+						tempCircle = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
-				if(selectGroup) {
-					foreach(Selectable unit in selectGroup.SelectedUnits) {
-						Movable action = unit.transform.root.GetComponent<Movable>();
+					tempCircle.transform.position = hitInfo.point;
+					tempCircle.transform.localScale = new Vector3(10, 10, 10);
 
-						if(action)
-							action.Move(hitInfo.point);
+					// Apply movement to each selected unit.
+					if (selectGroup)
+					{
+						foreach (Selectable unit in selectGroup.SelectedUnits)
+						{
+							Movable action = unit.transform.root.GetComponent<Movable>();
+
+							if (action)
+								action.Move(hitInfo.point);
+						}
 					}
 				}
 			}
