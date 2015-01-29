@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Source\Entities\Behaviors\Selectable.cs" />
      <Compile Include="Assets\Source\Options.cs" />
      <Compile Include="Assets\Source\Player\HUD.cs" />
      <Compile Include="Assets\Source\Player\InputController.cs" />
