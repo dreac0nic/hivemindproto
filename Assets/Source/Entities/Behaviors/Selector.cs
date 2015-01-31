@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Selector : MonoBehaviour
 {
-	public bool SelectedUnits { get { return selected; }}
+	public LinkedList<GameObject> SelectedUnits { get { return selected; }}
 
 	protected LinkedList<GameObject> selected = new LinkedList<GameObject>();
-	protected bool enabled;
 
 	void Start()
 	{
@@ -18,27 +18,31 @@ public class Selector : MonoBehaviour
 		if(!enabled) return;
 
 		if(Input.GetMouseButtonDown(0)) {
-			GameObject pickedObject = FindHitObjects();
-			Vector3 hitPoint = FindHitPoint();
+			GameObject pickedObject = PickObject();
+			Vector3 hitPoint = FindRayCollision();
 
-			if(pickedObject && hitPoint != Vector3(-99999, -99999, -99999)) {
-				Selectable objectSelect = pickedObject.getComponent<Selectable>();
+			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999)) {
+				Selectable objectSelect = pickedObject.GetComponent<Selectable>();
 
 				if(objectSelect) {
-					objectSelect = true;
-					selected.AddLast(GameObject)
+					objectSelect.Selected = true;
+					selected.AddLast(pickedObject);
 				}
 			}
-		} else if (Input.GetMoustButtonDown(1)) {
-			foreach(var obj in selected)
-				selected.Selected = false;
+		} else if (Input.GetMouseButtonDown(1)) {
+			foreach(var obj in selected) {
+				Selectable objectSelect = obj.GetComponent<Selectable>();
+
+				if(objectSelect)
+					objectSelect.Selected = false;
+			}
 
 			selected.Clear();
 		}
 	}
 
 	// Helper Methods for Finding Picks
-	protected GameObject PickObject()
+	GameObject PickObject()
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
@@ -49,7 +53,7 @@ public class Selector : MonoBehaviour
 		return null;
 	}
 
-	protected Vector3 FindRayCollision()
+	Vector3 FindRayCollision()
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
@@ -57,6 +61,6 @@ public class Selector : MonoBehaviour
 		if(Physics.Raycast(ray, out hit))
 			return hit.point;
 
-		return Vector3(-99999, -99999, -99999);
+		return new Vector3(-99999, -99999, -99999);
 	}
 }
