@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Text;
 
 public class HUD : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class HUD : MonoBehaviour
 
 			buffer.Append(compie.SelectedUnits.Count);
 
-			GUI.Label(new Rect(0, 0, RESOURCE_BARD_WIDTH, RESOURCE_BAR_HEIGHT), buffer.toString());
+			GUI.Label(new Rect(0, 0, RESOURCE_BAR_WIDTH, RESOURCE_BAR_HEIGHT), buffer.ToString());
 		} else
 			GUI.Label(new Rect(0, 0, RESOURCE_BAR_WIDTH, RESOURCE_BAR_HEIGHT), "RESOURCES");
 
