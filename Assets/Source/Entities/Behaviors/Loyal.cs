@@ -19,34 +19,43 @@ public class Loyal : MonoBehaviour
 	{
 		if(allegiance) {
 			// Update loyalty.
-			loyalty = TimeModifier()*allegiance.Power(transform.root.position);
+			float currModie = 1.0f;
+			float sumOfOtherQueens = 0f;
 
-			if(loyalty < 0) {
-				// Check for other queens.
-				Influential[] queens = (Influential[])this.transform.root.GetComponentsInParent(typeof(Influential));
+			Influential[] queens = Object.FindObjectsOfType(typeof(Influential)) as Influential[];
 
-				if(queens.Length >= 1) {
-					// Reassign to new queen.
-					Influential newQueen = null;
-					float power = 0f;
+			foreach(Influential queen in queens) {
+				float power = queen.Power(transform.root.position);
 
-					foreach(Influential heir in queens) {
-						float tempPower = heir.Power(transform.root.position);
-
-						if(tempPower > power) {
-							newQueen = heir;
-							power = tempPower;
-						}
-					}
-
-					allegiance = newQueen;
-				} else {
-					allegiance = null;
-				}
+				if(power > 0) sumOfOtherQueens += power;
 			}
+
+			loyalty = currModie*allegiance.Power(transform.root.position) - 0*sumOfOtherQueens;
+
+			if(loyalty < 0)
+					allegiance = null;
 		} else {
 			// Feral!
+			allegiance = GetStrongestQueen();
 		}
+	}
+
+	protected Influential GetStrongestQueen()
+	{
+		Influential[] queens = Object.FindObjectsOfType(typeof(Influential)) as Influential[];
+		Influential queen = null;
+		float power = 0f;
+
+		foreach(Influential heir in queens) {
+			float tempPower = heir.Power(transform.root.position);
+
+			if(tempPower > power) {
+				queen = heir;
+				power = tempPower;
+			}
+		}
+
+		return queen;
 	}
 
 	protected float TimeModifier()
