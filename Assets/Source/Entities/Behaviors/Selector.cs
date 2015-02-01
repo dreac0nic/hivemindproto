@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class Selector : MonoBehaviour
 {
-	public LinkedList<GameObject> SelectedUnits { get { return selected; }}
+	public LinkedList<Selectable> SelectedUnits { get { return selected; }}
 
-	protected LinkedList<GameObject> selected = new LinkedList<GameObject>();
+	protected LinkedList<Selectable> selected = new LinkedList<Selectable>();
 
 	void Start()
 	{
@@ -22,20 +22,16 @@ public class Selector : MonoBehaviour
 			Vector3 hitPoint = FindRayCollision();
 
 			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999)) {
-				Selectable objectSelect = pickedObject.GetComponent<Selectable>();
+				Selectable objectSelect = pickedObject.transform.root.GetComponent<Selectable>();
 
 				if(objectSelect) {
 					objectSelect.Selected = true;
-					selected.AddLast(pickedObject);
+					selected.AddLast(objectSelect);
 				}
 			}
 		} else if (Input.GetMouseButtonDown(1)) {
-			foreach(var obj in selected) {
-				Selectable objectSelect = obj.GetComponent<Selectable>();
-
-				if(objectSelect)
-					objectSelect.Selected = false;
-			}
+			foreach(var obj in selected)
+				obj.Selected = false;
 
 			selected.Clear();
 		}
