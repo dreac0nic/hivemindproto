@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Loyal : MonoBehaviour
 {
+	public Influential Allegiance { get { return allegiance; }}
+	
 	public Influential allegiance;
 	public float loyalty = 0;
 	public int duration = 0;
@@ -35,7 +37,7 @@ public class Loyal : MonoBehaviour
 							power = tempPower;
 						}
 					}
-					
+
 					allegiance = newQueen;
 				} else {
 					allegiance = null;
