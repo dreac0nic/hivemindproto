@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Source\Entities\Behaviors\Influencial.cs" />
+     <Compile Include="Assets\Source\Entities\Behaviors\Influential.cs" />
      <Compile Include="Assets\Source\Entities\Behaviors\Loyal.cs" />
      <Compile Include="Assets\Source\Entities\Behaviors\Selectable.cs" />
      <Compile Include="Assets\Source\Entities\Behaviors\Selector.cs" />

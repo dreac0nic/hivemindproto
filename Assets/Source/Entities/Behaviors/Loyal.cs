@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Loyal : MonoBehaviour
 {
-	public Influencial allegiance;
+	public Influential allegiance;
 	public double loyalty = 0;
 
 	void Start()
