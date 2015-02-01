@@ -24,7 +24,7 @@ public class Selector : MonoBehaviour
 			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999)) {
 				Selectable objectSelect = pickedObject.transform.root.GetComponent<Selectable>();
 
-				if(objectSelect) {
+				if(objectSelect && selected.Find(objectSelect) == null) {
 					objectSelect.Selected = true;
 					selected.AddLast(objectSelect);
 				}
