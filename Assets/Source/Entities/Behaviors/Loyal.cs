@@ -4,7 +4,8 @@ using System.Collections;
 public class Loyal : MonoBehaviour
 {
 	public Influential Allegiance { get { return allegiance; }}
-	
+	public bool Feral { get { return (allegiance == null ? true : false); }}
+
 	public Influential allegiance;
 	public float loyalty = 0;
 	public int duration = 0;
