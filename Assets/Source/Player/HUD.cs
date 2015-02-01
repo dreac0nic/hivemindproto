@@ -39,6 +39,7 @@ public class HUD : MonoBehaviour
 				buffer.Append(obj.transform.root.gameObject.name);
 
 				Loyal temp = obj.transform.root.GetComponent<Loyal>();
+				buffer.Append(" [" + temp.loyalty + "] ");
 				if(temp && !temp.Feral)
 					buffer.Append(" [" + temp.Allegiance.transform.root.gameObject.name + "]\n");
 				else

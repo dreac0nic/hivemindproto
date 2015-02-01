@@ -56,5 +56,28 @@ public class InputController : MonoBehaviour
 
 		if(destination != originalPos)
 			Camera.main.transform.position = Vector3.MoveTowards(originalPos, destination, Time.deltaTime*Options.ScrollSpeed);
+
+		// Queen controls for some simple testing.
+		Transform queen = transform.root.Find("/Basic Unit 2");
+
+		if(queen) {
+			Vector3 displacement = new Vector3();
+
+			if(Input.GetKey(KeyCode.I))
+				displacement.z = 1;
+			else if(Input.GetKey(KeyCode.K))
+				displacement.z = -1;
+
+			if(Input.GetKey(KeyCode.J))
+				displacement.x = -1;
+			else if(Input.GetKey(KeyCode.L))
+				displacement.x = 1;
+
+			Vector3 origin = queen.transform.root.position;
+			Vector3 dest = origin + displacement;
+
+			if(destination != origin)
+				queen.transform.root.position = Vector3.MoveTowards(origin, dest, Time.deltaTime*50);
+		}
 	}
 }
