@@ -86,7 +86,7 @@ GameObject:
   - 135: {fileID: 95586819}
   - 23: {fileID: 95586818}
   m_Layer: 0
-  m_Name: infulence
+  m_Name: influenceBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 95586816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2115624684}
   m_RootOrder: 1
@@ -560,6 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allegiance: {fileID: 0}
   loyalty: 0
+  duration: 0
 --- !u!1001 &1347469914
 Prefab:
   m_ObjectHideFlags: 0
@@ -955,6 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allegiance: {fileID: 0}
   loyalty: 0
+  duration: 0
 --- !u!1 &1989172174
 GameObject:
   m_ObjectHideFlags: 0
