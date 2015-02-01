@@ -18,7 +18,7 @@ public class Influential : MonoBehaviour
 		var influenceSphere = transform.root.Find("influenceBubble");
 
 		if(influenceSphere)
-			influenceSphere.transform.localScale = new Vector3(strength, strength, strength);
+			influenceSphere.transform.localScale = 2*(new Vector3(strength, strength, strength));
 	}
 
 	// Returns the power at the given point of the influence bubble.
@@ -26,6 +26,6 @@ public class Influential : MonoBehaviour
 	{
 		float distance = Vector3.Distance(this.transform.root.position, pos);
 
-		return -distance+100;
+		return -distance + strength;
 	}
 }
