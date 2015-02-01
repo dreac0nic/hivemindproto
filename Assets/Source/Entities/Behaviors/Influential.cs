@@ -6,7 +6,7 @@ public class Influential : MonoBehaviour
 	/* A single "strength" modifier. This encompasses both the power and distance of transmission.
 	 * For now, merely specifies distance, but later the algorithm should be tweaked appropriately.
 	 */
-	public double strength = 100;
+	public float strength = 100;
 
 	void Start()
 	{
@@ -15,7 +15,10 @@ public class Influential : MonoBehaviour
 
 	void Update()
 	{
+		var influenceSphere = transform.root.Find("influenceBubble");
 
+		if(influenceSphere)
+			influenceSphere.transform.localScale = new Vector3(strength, strength, strength);
 	}
 
 	// Returns the power at the given point of the influence bubble.
