@@ -6,7 +6,7 @@ using HiveMind;
 public class InputController : MonoBehaviour
 {
 	// Get rid of these after testing movement
-	public MoveController moveController;
+	public Movable moveUnit;
 	private GameObject tempCircle;
 
 	private Player player;
@@ -77,7 +77,7 @@ public class InputController : MonoBehaviour
 				tempCircle.transform.localScale = new Vector3(10, 10, 10);
 
 				// Move the unit to the point
-				moveController.destination = hitInfo.point;
+				moveUnit.destination = hitInfo.point;
 			}
 		}
 	}
