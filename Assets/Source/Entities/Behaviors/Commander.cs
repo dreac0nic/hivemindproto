@@ -40,7 +40,7 @@ public class Commander : MonoBehaviour
 						Movable action = unit.transform.root.GetComponent<Movable>();
 
 						if(action)
-							action.destination = hitInfo.point;
+							action.Move(hitInfo.point);
 					}
 				}
 			}
