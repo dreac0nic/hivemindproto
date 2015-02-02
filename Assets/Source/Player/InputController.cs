@@ -5,6 +5,10 @@ using HiveMind;
 
 public class InputController : MonoBehaviour
 {
+	// Get rid of these after testing movement
+	public MoveController moveController;
+	private GameObject tempCircle;
+
 	private Player player;
 
 	void Start ()
@@ -56,5 +60,25 @@ public class InputController : MonoBehaviour
 
 		if(destination != originalPos)
 			Camera.main.transform.position = Vector3.MoveTowards(originalPos, destination, Time.deltaTime*Options.ScrollSpeed);
+
+		// Test for clicks
+		if (Input.GetButtonDown("Move"))
+		{
+			RaycastHit hitInfo;
+
+			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, Layers.Map))
+			{
+				// Spawn a marker
+				if(!tempCircle)
+				{
+					tempCircle = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+				}
+				tempCircle.transform.position = hitInfo.point;
+				tempCircle.transform.localScale = new Vector3(10, 10, 10);
+
+				// Move the unit to the point
+				moveController.destination = hitInfo.point;
+			}
+		}
 	}
 }
