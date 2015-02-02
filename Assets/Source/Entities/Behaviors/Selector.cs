@@ -20,20 +20,18 @@ public class Selector : MonoBehaviour
 		if(Input.GetMouseButtonDown(0)) {
 			GameObject pickedObject = PickObject();
 			Vector3 hitPoint = FindRayCollision();
+			Selectable objectSelect = pickedObject.transform.root.GetComponent<Selectable>();
 
-			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999)) {
-				Selectable objectSelect = pickedObject.transform.root.GetComponent<Selectable>();
 
-				if(objectSelect && selected.Find(objectSelect) == null) {
-					objectSelect.Selected = true;
-					selected.AddLast(objectSelect);
-				}
+			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999) && objectSelect && selected.Find(objectSelect) == null) {
+				if(!Input.GetButton("SelectModifier"))
+					ClearSelection();
+
+				objectSelect.Selected = true;
+				selected.AddLast(objectSelect);
+			} else {
+				ClearSelection();
 			}
-		} else if (Input.GetMouseButtonDown(1)) {
-			foreach(var obj in selected)
-				obj.Selected = false;
-
-			selected.Clear();
 		}
 	}
 
@@ -58,5 +56,13 @@ public class Selector : MonoBehaviour
 			return hit.point;
 
 		return new Vector3(-99999, -99999, -99999);
+	}
+
+	void ClearSelection()
+	{
+		foreach(Selectable unit in selected)
+			unit.Selected = false;
+
+		selected.Clear();
 	}
 }
