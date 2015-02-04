@@ -15,7 +15,7 @@ public class Influential : MonoBehaviour
 
 	void Update()
 	{
-		var influenceSphere = transform.root.Find("influenceBubble");
+		var influenceSphere = transform.parent.Find("influenceBubble");
 
 		if(influenceSphere)
 			influenceSphere.transform.localScale = 2*(new Vector3(strength, strength, strength));
@@ -29,3 +29,4 @@ public class Influential : MonoBehaviour
 		return -distance + strength;
 	}
 }
+
