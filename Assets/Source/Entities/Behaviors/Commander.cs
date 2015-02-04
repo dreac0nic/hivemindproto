@@ -7,9 +7,11 @@ public class Commander : MonoBehaviour
 {
 	// Get rid of these after testing movement
 	private GameObject tempCircle;
+	private Player player;
 
 	void Start()
 	{
+		player = transform.root.GetComponent<Player>();
 	}
 
 	void Update()
@@ -23,23 +25,21 @@ public class Commander : MonoBehaviour
 			{
 				// Spawn a marker
 				if(!tempCircle)
-				{
 					tempCircle = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-				}
+
 				tempCircle.transform.position = hitInfo.point;
 				tempCircle.transform.localScale = new Vector3(10, 10, 10);
 
 				// Move the unit to the point
-				//moveUnit.destination = hitInfo.point;
-
-				// Apply movement to each selected unit.
 				Selector selectGroup = transform.root.GetComponent<Selector>();
 
 				if(selectGroup) {
 					foreach(Selectable unit in selectGroup.SelectedUnits) {
+						Loyal loyalty = unit.transform.root.GetComponent<Loyal>();
+						Influential queen = unit.transform.root.GetComponent<Influential>();
 						Movable action = unit.transform.root.GetComponent<Movable>();
 
-						if(action)
+						if(action && ((loyalty && loyalty.allegiance == player.queen) || (queen && queen == player.queen)))
 							action.Move(hitInfo.point);
 					}
 				}
