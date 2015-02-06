@@ -11,7 +11,7 @@ public class Commander : MonoBehaviour
 
 	void Start()
 	{
-		player = transform.root.GetComponent<Player>();
+		player = GetComponent<Player>();
 	}
 
 	void Update()
@@ -35,9 +35,9 @@ public class Commander : MonoBehaviour
 
 				if(selectGroup) {
 					foreach(Selectable unit in selectGroup.SelectedUnits) {
-						Loyal loyalty = unit.transform.root.GetComponent<Loyal>();
-						Influential queen = unit.transform.root.GetComponent<Influential>();
-						Movable action = unit.transform.root.GetComponent<Movable>();
+						Loyal loyalty = unit.GetComponent<Loyal>();
+						Influential queen = unit.GetComponent<Influential>();
+						Movable action = unit.GetComponent<Movable>();
 
 						if(action && ((loyalty && loyalty.allegiance == player.queen) || (queen && queen == player.queen)))
 							action.Move(hitInfo.point);
