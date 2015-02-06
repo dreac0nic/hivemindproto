@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,10 +17,10 @@ public class Selector : MonoBehaviour
 	{
 		if(!enabled) return;
 
-		if(Input.GetMouseButtonDown(0)) {
+		if(Input.GetButtonDown("Select")) {
 			GameObject pickedObject = PickObject();
 			Vector3 hitPoint = FindRayCollision();
-			Selectable objectSelect = pickedObject.transform.root.GetComponent<Selectable>();
+			Selectable objectSelect = pickedObject.GetComponentInParent<Selectable>();
 
 
 			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999) && objectSelect && selected.Find(objectSelect) == null) {

@@ -205,6 +205,7 @@ GameObject:
   - 114: {fileID: 967876333}
   - 114: {fileID: 967876334}
   - 195: {fileID: 967876335}
+  - 114: {fileID: 967876336}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Untagged
@@ -247,7 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78a7196401c469438341b185d9c1fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
 --- !u!195 &967876335
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -268,6 +268,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &967876336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967876331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e627afbc33deab449cdeb052a39666d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 100
 --- !u!1 &968817124
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +492,7 @@ GameObject:
   - 114: {fileID: 1204649542}
   - 114: {fileID: 1204649543}
   - 195: {fileID: 1204649544}
+  - 114: {fileID: 1204649545}
   m_Layer: 0
   m_Name: Drone 1
   m_TagString: Untagged
@@ -522,7 +535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78a7196401c469438341b185d9c1fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
 --- !u!195 &1204649544
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -543,6 +555,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1204649545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1204649540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb4ec0f0cbc7e446aa98bf15901787e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allegiance: {fileID: 0}
+  loyalty: 0
+  duration: 0
 --- !u!1001 &1235200840
 Prefab:
   m_ObjectHideFlags: 0
@@ -926,6 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   username: dreac0nic
+  queen: {fileID: 967876336}
 --- !u!4 &2045115476
 Transform:
   m_ObjectHideFlags: 0

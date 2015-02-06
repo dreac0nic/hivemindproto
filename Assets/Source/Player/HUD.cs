@@ -36,7 +36,17 @@ public class HUD : MonoBehaviour
 			StringBuilder buffer = new StringBuilder();
 
 			foreach(var obj in compie.SelectedUnits) {
-				buffer.Append(obj.transform.root.gameObject.name + "\n");
+				buffer.Append(obj.gameObject.name);
+
+				Loyal unitLoyalty = obj.GetComponent<Loyal>();
+				if(unitLoyalty) {
+					buffer.Append(" [" + unitLoyalty.loyalty + "] ");
+
+					if(!unitLoyalty.Feral)
+						buffer.Append(" [" + unitLoyalty.Allegiance.gameObject.name + "]");
+				}
+
+				buffer.Append("\n");
 			}
 
 			GUI.Label(new Rect(0, 30, SELECTION_LIST_WIDTH, SELECTION_LIST_HEIGHT - 30), buffer.ToString());
