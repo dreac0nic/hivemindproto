@@ -22,7 +22,7 @@ public class Influential : MonoBehaviour
 	void Update()
 	{
 		if(influenceBubble)
-			influenceBubble.transform.localScale = 2*(new Vector3(strength, strength, strength));
+			influenceBubble.transform.localScale = 0.5f*(new Vector3(strength, strength, strength));
 	}
 
 	// Returns the power at the given point of the influence bubble.
