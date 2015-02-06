@@ -17,7 +17,7 @@ public class Selector : MonoBehaviour
 	{
 		if(!enabled) return;
 
-		if(Input.GetMouseButtonDown(0)) {
+		if(Input.GetButtonDown("Select")) {
 			GameObject pickedObject = PickObject();
 			Vector3 hitPoint = FindRayCollision();
 			Selectable objectSelect = pickedObject.GetComponentInParent<Selectable>();
