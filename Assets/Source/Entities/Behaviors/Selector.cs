@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class Selector : MonoBehaviour
 {
-	public List<Selectable> SelectedUnits { get { return selected; }}
+	public HashSet<Selectable> SelectedUnits { get { return selected; }}
 
-	protected List<Selectable> selected = new List<Selectable>();
+	protected HashSet<Selectable> selected = new HashSet<Selectable>();
 
 	void Start()
 	{

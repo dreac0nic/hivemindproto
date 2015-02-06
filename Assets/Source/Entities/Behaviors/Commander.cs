@@ -20,7 +20,7 @@ public class Commander : MonoBehaviour
 		
 		if(selectGroup)
 		{
-			List<Selectable> selectedUnits = selectGroup.SelectedUnits;
+			HashSet<Selectable> selectedUnits = selectGroup.SelectedUnits;
 
 			// Breeding
 			foreach(Breed breedComponent in selectedUnits.Select(su => su.GetComponent<Breed>()).Where(b => b != null))
