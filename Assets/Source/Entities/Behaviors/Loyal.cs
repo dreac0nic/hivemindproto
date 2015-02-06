@@ -19,7 +19,6 @@ public class Loyal : MonoBehaviour
 	{
 		if(allegiance) {
 			// Update loyalty.
-			float currModie = 1.0f;
 			float sumOfOtherQueens = 0f;
 
 			Influential[] queens = Object.FindObjectsOfType(typeof(Influential)) as Influential[];
@@ -30,7 +29,7 @@ public class Loyal : MonoBehaviour
 				if(power > 0) sumOfOtherQueens += power;
 			}
 
-			loyalty = currModie*allegiance.Power(transform.root.position) - 0*sumOfOtherQueens;
+			loyalty = allegiance.Power(transform.root.position) - 0*sumOfOtherQueens;
 
 			if(loyalty < 0)
 					allegiance = null;
