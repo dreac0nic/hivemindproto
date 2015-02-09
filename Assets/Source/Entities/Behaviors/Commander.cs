@@ -36,6 +36,18 @@ public class Commander : MonoBehaviour
 				}
 			}
 
+			// Test hurting
+			if(Input.GetKeyDown(KeyCode.H))
+			{
+				foreach(UnitStats unit in selectedUnits.Select(su => su.GetComponent<UnitStats>()).Where(b => b != null))
+				{
+					if(unit.Health > 0)
+						unit.Health -= 5;
+					else
+						unit.Health = unit.MaxHealth;
+				}
+			}
+
 			// Ordering (right click)
 			if (Input.GetButtonDown("Order"))
 			{
