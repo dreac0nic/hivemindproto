@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class Selector : MonoBehaviour
 {
-	public LinkedList<Selectable> SelectedUnits { get { return selected; }}
+	public HashSet<Selectable> SelectedUnits { get { return selected; }}
 
-	protected LinkedList<Selectable> selected = new LinkedList<Selectable>();
+	protected HashSet<Selectable> selected = new HashSet<Selectable>();
 
 	void Start()
 	{
@@ -23,12 +23,12 @@ public class Selector : MonoBehaviour
 			Selectable objectSelect = pickedObject.GetComponentInParent<Selectable>();
 
 
-			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999) && objectSelect && selected.Find(objectSelect) == null) {
+			if(pickedObject && hitPoint != new Vector3(-99999, -99999, -99999) && objectSelect && !selected.Contains(objectSelect)) {
 				if(!Input.GetButton("SelectModifier"))
 					ClearSelection();
 
 				objectSelect.Selected = true;
-				selected.AddLast(objectSelect);
+				selected.Add(objectSelect);
 			} else {
 				ClearSelection();
 			}
@@ -36,13 +36,13 @@ public class Selector : MonoBehaviour
 	}
 
 	// Helper Methods for Finding Picks
-	GameObject PickObject()
+	public static GameObject PickObject()
 	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 
 		if(Physics.Raycast(ray, out hit))
-			return hit.collider.gameObject;
+			return hit.collider.gameObject.transform.parent.gameObject;
 
 		return null;
 	}
