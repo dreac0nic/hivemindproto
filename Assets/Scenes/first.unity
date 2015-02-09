@@ -117,6 +117,10 @@ Prefab:
       propertyPath: MaxHealth
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 11481698, guid: c29068b005224d9489f5019a3df167cb, type: 2}
+      propertyPath: UnitUiCamera
+      value: 
+      objectReference: {fileID: 767093727}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c29068b005224d9489f5019a3df167cb, type: 2}
   m_RootGameObject: {fileID: 655258030}
@@ -236,6 +240,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 5
   Position: {x: 0, y: 0, z: 0}
+  UnitUiCamera: {fileID: 767093727}
 --- !u!114 &655258032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,6 +360,10 @@ Prefab:
       propertyPath: MaxHealth
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 11498134, guid: 5418423382aaf9946b8caebbc910f1d1, type: 2}
+      propertyPath: UnitUiCamera
+      value: 
+      objectReference: {fileID: 767093727}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5418423382aaf9946b8caebbc910f1d1, type: 2}
   m_RootGameObject: {fileID: 791160878}
@@ -486,6 +495,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+  UnitUiCamera: {fileID: 767093727}
 --- !u!195 &791160881
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -637,6 +647,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 5
   Position: {x: 0, y: 0, z: 0}
+  UnitUiCamera: {fileID: 767093727}
 --- !u!1 &968817124
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +977,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+  UnitUiCamera: {fileID: 767093727}
 --- !u!195 &1069614607
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1454,6 +1466,10 @@ Prefab:
       propertyPath: Health
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 11452108, guid: 8942c482111ca694687e2134b28596fd, type: 2}
+      propertyPath: UnitUiCamera
+      value: 
+      objectReference: {fileID: 767093727}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8942c482111ca694687e2134b28596fd, type: 2}
   m_RootGameObject: {fileID: 1069614603}
@@ -2064,6 +2080,10 @@ Prefab:
       propertyPath: MaxHealth
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 11486138, guid: 3115508d6a17385448c090764ce6cea7, type: 2}
+      propertyPath: UnitUiCamera
+      value: 
+      objectReference: {fileID: 767093727}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3115508d6a17385448c090764ce6cea7, type: 2}
   m_RootGameObject: {fileID: 2121527408}
@@ -2181,6 +2201,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+  UnitUiCamera: {fileID: 767093727}
 --- !u!1 &2123896999
 GameObject:
   m_ObjectHideFlags: 0

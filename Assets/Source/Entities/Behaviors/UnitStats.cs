@@ -11,13 +11,13 @@ public class UnitStats : MonoBehaviour
 
 	private GameObject UnitUiCanvas;
 	private RectTransform HpBarRatio;
+	public Camera UnitUiCamera;
 
 	void Start()
 	{
 		UnitUiCanvas = (GameObject)Instantiate(Resources.Load("UnitUI"), Vector3.up * 7, Quaternion.identity);
 		UnitUiCanvas.transform.SetParent(transform, false);
 		HpBarRatio = UnitUiCanvas.transform.Find("HpRatio").gameObject.GetComponent<RectTransform>();
-		//HpBarRatio.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 256f);
 	}
 
 	void Update()
@@ -25,5 +25,6 @@ public class UnitStats : MonoBehaviour
 		Position = transform.position;
 
 		HpBarRatio.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 512f * (float)Health / (float)MaxHealth);
+		UnitUiCanvas.transform.LookAt(new Vector3(transform.position.x, UnitUiCamera.transform.position.y, transform.position.z));
 	}
 }
