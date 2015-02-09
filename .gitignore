@@ -29,3 +29,13 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# ============ #
+# Editor Files #
+# ============ #
+# EMACS
+*~
+\#*#
+
+# VIM
+.*.sw*
