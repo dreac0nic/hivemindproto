@@ -11,7 +11,7 @@ GameObject:
   - 222: {fileID: 22262396}
   - 114: {fileID: 11462398}
   - 114: {fileID: 11462396}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HpRatio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 224: {fileID: 22462398}
   - 222: {fileID: 22262398}
   - 114: {fileID: 11462400}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 223: {fileID: 22362396}
   - 114: {fileID: 11462404}
   - 114: {fileID: 11462402}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: UnitUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
