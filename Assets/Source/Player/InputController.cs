@@ -13,8 +13,8 @@ public class InputController : MonoBehaviour
 		player = transform.root.GetComponent<Player>();
 
 		// Set original camera position and rotation
-		Camera.main.transform.position = Options.CameraStartPos;
-		Camera.main.transform.rotation = Quaternion.Euler(Options.CameraStartRot);
+		Camera.main.transform.position = Options.O.CameraStartPos;
+		Camera.main.transform.rotation = Quaternion.Euler(Options.O.CameraStartRot);
 	}
 
 	void Update ()
@@ -24,20 +24,20 @@ public class InputController : MonoBehaviour
 		Vector3 camTransform = new Vector3(0, 0, 0);
 
 		// Test Horizontal Movement
-		if(mousePos.x >= 0 && mousePos.x < Options.ScrollBorder)
-			camTransform.x -= Options.ScrollSpeed;
-		else if(mousePos.x <= Screen.width && mousePos.x > Screen.width - Options.ScrollBorder)
-			camTransform.x += Options.ScrollSpeed;
+		if(mousePos.x >= 0 && mousePos.x < Options.O.ScrollBorder)
+			camTransform.x -= Options.O.ScrollSpeed;
+		else if(mousePos.x <= Screen.width && mousePos.x > Screen.width - Options.O.ScrollBorder)
+			camTransform.x += Options.O.ScrollSpeed;
 
 		// Test Vertical Movement
-		if(mousePos.y >= 0 && mousePos.y < Options.ScrollBorder)
-			camTransform.z -= Options.ScrollSpeed;
-		else if(mousePos.y <= Screen.height && mousePos.y > Screen.height - Options.ScrollBorder)
-			camTransform.z += Options.ScrollSpeed;
+		if(mousePos.y >= 0 && mousePos.y < Options.O.ScrollBorder)
+			camTransform.z -= Options.O.ScrollSpeed;
+		else if(mousePos.y <= Screen.height && mousePos.y > Screen.height - Options.O.ScrollBorder)
+			camTransform.z += Options.O.ScrollSpeed;
 
 		// Test arrow controls
-		camTransform.z += Input.GetAxis("Vertical") * Options.ScrollSpeed;
-		camTransform.x += Input.GetAxis("Horizontal") * Options.ScrollSpeed;
+		camTransform.z += Input.GetAxis("Vertical") * Options.O.ScrollSpeed;
+		camTransform.x += Input.GetAxis("Horizontal") * Options.O.ScrollSpeed;
 
 		// Retransform movement to camera's local orientation, drop vertical movement.
 		camTransform = Camera.main.transform.TransformDirection(camTransform);
@@ -46,8 +46,8 @@ public class InputController : MonoBehaviour
 		// Zoom with scroll wheel
 		if (Input.GetAxis("Zoom") != 0)
 		{
-			float camFieldOfView = Camera.main.fieldOfView - (Options.ZoomSpeed * Input.GetAxis("Zoom"));
-			Camera.main.fieldOfView = Mathf.Clamp(camFieldOfView, Options.ZoomMin, Options.ZoomMax);
+			float camFieldOfView = Camera.main.fieldOfView - (Options.O.ZoomSpeed * Input.GetAxis("Zoom"));
+			Camera.main.fieldOfView = Mathf.Clamp(camFieldOfView, Options.O.ZoomMin, Options.O.ZoomMax);
 		}
 
 		// Apply the movement to current position and set camera.
@@ -55,6 +55,6 @@ public class InputController : MonoBehaviour
 		Vector3 destination = originalPos + camTransform;
 
 		if(destination != originalPos)
-			Camera.main.transform.position = Vector3.MoveTowards(originalPos, destination, Time.deltaTime*Options.ScrollSpeed);
+			Camera.main.transform.position = Vector3.MoveTowards(originalPos, destination, Time.deltaTime*Options.O.ScrollSpeed);
 	}
 }

@@ -42,3 +42,8 @@ Thumbs.db
 # VIM
 .*.sw*
 .*.sw*.meta
+
+# ============ #
+# OS generated #
+# ============ #
+*.blend1*
