@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 	// Object Variables
 	public string username;
 	public Influential queen;
+	public Material color;
 
 	void Start ()
 	{

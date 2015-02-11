@@ -13,14 +13,18 @@ public class Loyal : MonoBehaviour
 	public float loyalty = 0;
 	public int duration = 0;
 
+	private Renderer renderer;
+
 	void Start()
 	{
-
+		renderer = GetComponentInChildren<Renderer>();
 	}
 
 	void Update()
 	{
 		if(allegiance) {
+			renderer.material = allegiance.Player.color;
+
 			// Update loyalty.
 			float sumOfOtherQueens = 0f;
 
@@ -37,6 +41,8 @@ public class Loyal : MonoBehaviour
 			if(loyalty < 0)
 					allegiance = null;
 		} else {
+			renderer.material = Options.O.FeralColor;
+
 			// Feral!
 			allegiance = GetStrongestQueen();
 		}
