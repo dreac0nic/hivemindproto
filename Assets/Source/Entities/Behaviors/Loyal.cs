@@ -47,7 +47,7 @@ public class Loyal : MonoBehaviour
 	{
 		HashSet<Influential> queens = Influential.Queens;
 		Influential queen = null;
-		float power = 0f;
+		float power = Options.O.FeralMinConvertPower;
 
 		foreach(Influential heir in queens) {
 			float tempPower = heir.Power(transform.position);
