@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
 	void Start ()
 	{
-
+		queen.Player = this;
 	}
 
 	void Update ()

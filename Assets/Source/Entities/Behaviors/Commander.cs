@@ -83,7 +83,7 @@ public class Commander : MonoBehaviour
 					{
 						foreach (Selectable unit in selectGroup.SelectedUnits)
 						{
-							Movable action = unit.transform.root.GetComponent<Movable>();
+							Movable action = unit.GetComponent<Movable>();
 
 							if (action)
 								action.Move(hitInfo.point);

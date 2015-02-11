@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
+using HiveMind;
 
 public class Loyal : MonoBehaviour
 {
@@ -21,15 +24,15 @@ public class Loyal : MonoBehaviour
 			// Update loyalty.
 			float sumOfOtherQueens = 0f;
 
-			Influential[] queens = Object.FindObjectsOfType(typeof(Influential)) as Influential[];
+			HashSet<Influential> queens = Influential.Queens;
 
 			foreach(Influential queen in queens) {
-				float power = queen.Power(transform.root.position);
+				float power = queen.Power(transform.position);
 
 				if(power > 0) sumOfOtherQueens += power;
 			}
 
-			loyalty = allegiance.Power(transform.root.position) - 0*sumOfOtherQueens;
+			loyalty = allegiance.Power(transform.position) - 0*sumOfOtherQueens;
 
 			if(loyalty < 0)
 					allegiance = null;
@@ -37,16 +40,17 @@ public class Loyal : MonoBehaviour
 			// Feral!
 			allegiance = GetStrongestQueen();
 		}
+
 	}
 
 	protected Influential GetStrongestQueen()
 	{
-		Influential[] queens = Object.FindObjectsOfType(typeof(Influential)) as Influential[];
+		HashSet<Influential> queens = Influential.Queens;
 		Influential queen = null;
 		float power = 0f;
 
 		foreach(Influential heir in queens) {
-			float tempPower = heir.Power(transform.root.position);
+			float tempPower = heir.Power(transform.position);
 
 			if(tempPower > power) {
 				queen = heir;
