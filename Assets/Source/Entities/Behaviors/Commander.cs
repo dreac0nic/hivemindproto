@@ -23,17 +23,18 @@ public class Commander : MonoBehaviour
 	void Update()
 	{
 		if(Input.GetButtonDown("Select")) {
-			GameObject pickedObject = PickObject();
+			GameObject picked = PickObject();
 			Vector3 hitPoint = FindRayCollision();
-			Commandable commandee = pickedObject.GetComponentInParent<Commandable>();
+			Commandable commandee = picked.GetComponentInParent<Commandable>();
 
-			if(pickedObject && hitPoint != INFINITY &&
-			   commandee && !selected.Contains(commandee)) {
+			if(hitPoint != INFINITY && picked && commandee) {
 				if(!Input.GetButton("SelectModifier"))
 					ClearSelection();
 
-				commandee.Selected = true;
-				selected.Add(commandee);
+				if(!selected.Contains(commandee)) {
+					commandee.Selected = true;
+					selected.Add(commandee);
+				}
 			} else
 				ClearSelection();
 		}
