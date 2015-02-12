@@ -7,8 +7,11 @@ using System.Collections.Generic;
 
 public class Commander : MonoBehaviour
 {
+	public Vector3 INFINITY { get { return new Vector3(-99999, -99999, -99999); } }
+
+	protected HashSet<Commandable> selected = new HashSet<Commandable>();
+	protected Player player;
 	private GameObject cursor;
-	private Player player;
 
 	void Start()
 	{
@@ -17,8 +20,25 @@ public class Commander : MonoBehaviour
 
 	void Update()
 	{
+		if(Input.GetButtonDown("Select")) {
+			GameObject pickedObject = PickObject();
+			Vector3 hitPoint = FindRayCollision();
+			Commandable commandee = pickedObject.GetComponentInParent<Commandable>();
+
+			if(pickedObject && hitPoint != INFINITY &&
+			   commandee && !selected.Contains(commandee)) {
+				if(!Input.GetButton("SelectModifier"))
+					ClearSelection();
+
+				commandee.Selected = true;
+				selected.Add(commandee);
+			} else
+				ClearSelection();
+		}
+		// OLD CODE
+		/*
 		Selector selectGroup = transform.root.GetComponent<Selector>();
-		
+
 		if(selectGroup)
 		{
 			HashSet<Selectable> selectedUnits = selectGroup.SelectedUnits;
@@ -97,5 +117,37 @@ public class Commander : MonoBehaviour
 				}
 			}
 		}
+		*/
+	}
+
+	// Helper Methods for Finding Picks
+	public static GameObject PickObject()
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+		if(Physics.Raycast(ray, out hit))
+			return hit.collider.gameObject.transform.parent.gameObject;
+
+		return null;
+	}
+
+	Vector3 FindRayCollision()
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+		if(Physics.Raycast(ray, out hit))
+			return hit.point;
+
+		return new Vector3(-99999, -99999, -99999);
+	}
+
+	void ClearSelection()
+	{
+		foreach(Commandable unit in selected)
+			unit.Selected = false;
+
+		selected.Clear();
 	}
 }
