@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 744d572e49d7d294f85b90d6e0a62cb6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Base
+    100004: Base 1
+    100006: bishop
+    100008: bishop_armature
+    100010: Body
+    100012: Body 1
+    100014: Camera
+    100016: //RootNode
+    100018: Cylinder
+    100020: Cylinder_001
+    100022: Head
+    100024: Head 1
+    100026: Lamp
+    100028: Plane_001
+    100030: Root
+    100032: Root 1
+    400000: Armature
+    400002: Base
+    400004: Base 1
+    400006: bishop
+    400008: bishop_armature
+    400010: Body
+    400012: Body 1
+    400014: Camera
+    400016: //RootNode
+    400018: Cylinder
+    400020: Cylinder_001
+    400022: Head
+    400024: Head 1
+    400026: Lamp
+    400028: Plane_001
+    400030: Root
+    400032: Root 1
+    2300000: Cylinder_001
+    2300002: Plane_001
+    3300000: Cylinder_001
+    3300002: Plane_001
+    4300000: Cylinder_001
+    4300002: Cylinder
+    4300004: Plane_001
+    4300006: bishop
+    7400000: Walk
+    7400002: Idle
+    9500000: //RootNode
+    13700000: bishop
+    13700002: Cylinder
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bishop
+        weight: 1
+      - path: bishop_armature
+        weight: 1
+      - path: bishop_armature/Root
+        weight: 1
+      - path: bishop_armature/Root/Base
+        weight: 1
+      - path: bishop_armature/Root/Body
+        weight: 1
+      - path: bishop_armature/Root/Body/Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 29
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bishop
+        weight: 1
+      - path: bishop_armature
+        weight: 1
+      - path: bishop_armature/Root
+        weight: 1
+      - path: bishop_armature/Root/Base
+        weight: 1
+      - path: bishop_armature/Root/Body
+        weight: 1
+      - path: bishop_armature/Root/Body/Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: bishop_armature
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
