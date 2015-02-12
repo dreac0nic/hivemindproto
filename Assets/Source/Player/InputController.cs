@@ -5,13 +5,9 @@ using HiveMind;
 
 public class InputController : MonoBehaviour
 {
-	private Player player;
 
 	void Start ()
 	{
-		// Get the player object.
-		player = transform.root.GetComponent<Player>();
-
 		// Set original camera position and rotation
 		Camera.main.transform.position = Options.O.CameraStartPos;
 		Camera.main.transform.rotation = Quaternion.Euler(Options.O.CameraStartRot);
