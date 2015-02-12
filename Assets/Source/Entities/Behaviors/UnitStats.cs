@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using HiveMind;
 
 public class UnitStats : MonoBehaviour 
 {
@@ -12,7 +13,6 @@ public class UnitStats : MonoBehaviour
 
 	private GameObject UnitUiCanvas;
 	private RectTransform HpBarRatio;
-	public Camera UnitUiCamera;
 
 	void Start()
 	{
@@ -26,6 +26,6 @@ public class UnitStats : MonoBehaviour
 		Position = transform.position;
 
 		HpBarRatio.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 512f * (float)Health / (float)MaxHealth);
-		UnitUiCanvas.transform.LookAt(new Vector3(transform.position.x, UnitUiCamera.transform.position.y, transform.position.z));
+		UnitUiCanvas.transform.LookAt(new Vector3(transform.position.x, Options.O.UICamera.transform.position.y, transform.position.z));
 	}
 }

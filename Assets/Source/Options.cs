@@ -19,6 +19,10 @@ namespace HiveMind
 		public float ZoomMax = 100;
 		public Vector3 CameraStartPos = new Vector3(0.0f, 126.0f, 0.0f);
 		public Vector3 CameraStartRot = new Vector3(68.0f, 0.0f, 0.0f);
+		public Camera MainCamera;
+		public Camera UICamera;
+		public Camera UnitCamera;
+		public Camera OverlayCamera;
 
 		// Unit Options
 		public Material FeralColor;
