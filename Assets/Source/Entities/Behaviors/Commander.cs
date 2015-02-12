@@ -37,8 +37,16 @@ public class Commander : MonoBehaviour
 				}
 			} else
 				ClearSelection();
+
+			// Check and ensure integrity of selection
+			if(selected.Count > 1) {
+				IEnumerable<Commandable> query = from unit in selected where unit.GetComponent<Loyal>() && (!unit.GetComponent<Loyal>().Allegiance || unit.GetComponent<Loyal>().Allegiance != player.queen) select unit;
+
+				foreach(Commandable unit in query)
+					RemoveSelection(unit);
+			}
 		} else if(Input.GetButtonDown("Order") && selected.Count > 0) {
-			GameObject picked = PickObject();
+			// GameObject picked = PickObject();
 			RaycastHit hit;
 
 			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, Layers.Map)) {
@@ -166,7 +174,13 @@ public class Commander : MonoBehaviour
 		return INFINITY;
 	}
 
-	void ClearSelection()
+	protected void RemoveSelection(Commandable unit)
+	{
+		unit.Selected = false;
+		selected.Remove(unit);
+	}
+
+	protected void ClearSelection()
 	{
 		foreach(Commandable unit in selected)
 			unit.Selected = false;
