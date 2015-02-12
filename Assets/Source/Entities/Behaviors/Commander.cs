@@ -140,7 +140,7 @@ public class Commander : MonoBehaviour
 		if(Physics.Raycast(ray, out hit))
 			return hit.point;
 
-		return new Vector3(-99999, -99999, -99999);
+		return INFINITY;
 	}
 
 	void ClearSelection()
