@@ -5,8 +5,7 @@ public class Carry : MonoBehaviour
 {
 	public bool IsFull { get { return CurrentlyCarrying >= CarryingCapacity; } }
 	public int CarryingCapacity;
-
-	protected int CurrentlyCarrying { get; set; }
+	public int CurrentlyCarrying { get; set; }
 	
 	public bool GiveResources(int resourceAmount)
 	{

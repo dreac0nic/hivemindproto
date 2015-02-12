@@ -30,6 +30,7 @@ GameObject:
   - 195: {fileID: 19590432}
   - 114: {fileID: 11490432}
   - 114: {fileID: 11487606}
+  - 114: {fileID: 11487832}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -163,6 +164,20 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+--- !u!114 &11487832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb4ec0f0cbc7e446aa98bf15901787e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allegiance: {fileID: 0}
+  loyalty: 0
+  duration: 0
 --- !u!114 &11490432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78a7196401c469438341b185d9c1fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: {x: 0, y: 0, z: 0}
 --- !u!114 &11490436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,7 +223,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 190434}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 3.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

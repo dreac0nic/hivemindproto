@@ -6,46 +6,59 @@ public class Harvester : MonoBehaviour
 	// Stats
 	public float HarvestingRate;
 	public float HarvestRange;
+	public float DepositRange;
+	public float DepositRetryRate;
 	public int CarryingCapacity;
-	public bool IsHarvesting { get; set; }
-	public int CurrentlyCarrying { get; set; }
+	public int CurrentlyCarrying;
 
-	private GameObject resourceBeingHarvested { get; set; }
-
-	// Default values
-	private float defaultHarvestingRate = 1.0f;
-	private int defaultCarryingCapacity = 10;
+	private GameObject resourceBeingHarvested;
+	private GameObject carrierBeingDepositedTo;
 
 	protected void Start()
 	{
-		HarvestingRate = defaultHarvestingRate;
-		IsHarvesting = false;
-		CarryingCapacity = defaultCarryingCapacity;
 		CurrentlyCarrying = 0;
 	}
 
-	public void Deposit(GameObject carrier)
+	public void StartDepositing(GameObject carrier)
 	{
-		if (carrier.GetComponent<Carry>().GiveResources(CurrentlyCarrying))
-			CurrentlyCarrying = 0;
+		carrierBeingDepositedTo = carrier;
+		InvokeRepeating("Deposit", 0, DepositRetryRate);
+	}
+
+	public void StopDepositing()
+	{
+		CancelInvoke("Deposit");
+	}
+
+	public void Deposit()
+	{
+		float distanceToCarrier = Vector3.Distance(carrierBeingDepositedTo.transform.position, GetComponent<UnitStats>().Position);
+		if (distanceToCarrier <= DepositRange)
+		{
+			if (carrierBeingDepositedTo.GetComponent<Carry>().GiveResources(CurrentlyCarrying))
+				CurrentlyCarrying = 0;
+			StopDepositing();
+		}
+		else
+		{
+			GetComponent<Movable>().Move(carrierBeingDepositedTo.transform.position, DepositRange);
+		}
 	}
 
 	public void StartHarvesting(GameObject resourceToHarvest)
 	{
-		IsHarvesting = true;
 		resourceBeingHarvested = resourceToHarvest;
 		InvokeRepeating("Harvest", 0, HarvestingRate);
 	}
 
 	public void StopHarvesting()
 	{
-		IsHarvesting = false;
 		CancelInvoke("Harvest");
 	}
 
 	private void Harvest()
 	{
-		if (CurrentlyCarrying >= CarryingCapacity || resourceBeingHarvested.GetComponent<Harvestable>().ResourcesLeft <= 0)
+		if (CurrentlyCarrying >= CarryingCapacity - 1 || resourceBeingHarvested.GetComponent<Harvestable>().ResourcesLeft <= 0)
 			StopHarvesting();
 
 		float distanceToResouce = Vector3.Distance(resourceBeingHarvested.transform.position, GetComponent<UnitStats>().Position);
