@@ -48,6 +48,11 @@ public class InputController : MonoBehaviour
 		{
 			float camFieldOfView = Camera.main.fieldOfView - (Options.O.ZoomSpeed * Input.GetAxis("Zoom"));
 			Camera.main.fieldOfView = Mathf.Clamp(camFieldOfView, Options.O.ZoomMin, Options.O.ZoomMax);
+			// Also zoom child cameras
+			foreach(Camera childCamera in Camera.main.GetComponentsInChildren<Camera>())
+			{
+				childCamera.fieldOfView = Mathf.Clamp(camFieldOfView, Options.O.ZoomMin, Options.O.ZoomMax);
+			}
 		}
 
 		// Apply the movement to current position and set camera.
