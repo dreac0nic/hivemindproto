@@ -35,7 +35,21 @@ public class Commandable : MonoBehaviour
   void Update() {
     if(orders.Count > 0) {
       Tuple<string, string> order = orders.Dequeue();
-      Debug.Log("I AM DOING " + order.First + " AT " + order.Second);
+
+      switch(order.First) {
+        case "MOVE":
+          Movable mover = GetComponent<Movable>();
+
+          if(mover) {
+            string[] elements = order.Second.Substring(1, order.Second.Length-2).Split(',');
+
+            Vector3 destination = new Vector3(float.Parse(elements[0]), float.Parse(elements[1]), float.Parse(elements[2]));
+
+            mover.Move(destination);
+          }
+
+          break;
+      }
     }
   }
 
