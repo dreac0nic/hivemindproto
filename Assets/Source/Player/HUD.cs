@@ -31,7 +31,7 @@ public class HUD : MonoBehaviour
 
 		GUI.Label(new Rect(0, 0, SELECTION_LIST_WIDTH, 30), "SELECTED UNITS");
 
-		Selector compie = player.GetComponent<Selector>();
+		Commander compie = player.GetComponent<Commander>();
 		if(compie && compie.SelectedUnits.Count > 0) {
 			StringBuilder buffer = new StringBuilder();
 
