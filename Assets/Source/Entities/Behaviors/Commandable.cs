@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -26,9 +26,9 @@ public class Commandable : MonoBehaviour
     }
 
     public void order(string order, string data, bool clearOrders = true) {
-	if(clearOrders)
-	    orders.Clear();
+		if(clearOrders)
+		    orders.Clear();
 
-	orders.Enqueue(new Tuple<string, string>(order, data));
+		orders.Enqueue(new Tuple<string, string>(order, data));
     }
 }
