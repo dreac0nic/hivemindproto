@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.73.0 commit date:2015-01-20, commit time:18:16, hash:bbf09d9</authoring_tool>
+    </contributor>
+    <created>2015-02-12T00:37:15</created>
+    <modified>2015-02-12T00:37:15</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.64 0.64 0.64 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material-material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="CursorMesh-mesh" name="CursorMesh">
+      <mesh>
+        <source id="CursorMesh-mesh-positions">
+          <float_array id="CursorMesh-mesh-positions-array" count="240">0.08403521 -1.708862 1.942392 0.888177 -3.258578 1.816866 -0.8881772 -3.258578 1.816866 -0.0840348 -1.708862 1.942392 0.08403521 -1.70337 2.269053 0.8881765 -3.247992 2.4466 -0.8881773 -3.247991 2.4466 -0.0840348 -1.70337 2.269053 0.3846759 -3.395956 1.930316 -0.3846762 -3.395956 1.930316 0.3846756 -3.389105 2.337831 -0.3846763 -3.389105 2.337831 0.2174552 -5.310585 1.962504 -0.2174567 -5.310585 1.962504 0.217455 -5.303734 2.370019 -0.2174568 -5.303734 2.370019 0.4958574 -2.275232 1.827938 -0.4958571 -2.275232 1.827938 0.4958571 -2.265573 2.40248 -0.4958572 -2.265573 2.40248 1.708862 0.08403509 1.942392 3.258578 0.8881767 1.816866 3.258578 -0.8881774 1.816866 1.708862 -0.08403491 1.942392 1.70337 0.08403509 2.269053 3.247992 0.8881762 2.4466 3.247991 -0.8881776 2.4466 1.70337 -0.08403491 2.269053 3.395956 0.3846756 1.930316 3.395956 -0.3846765 1.930316 3.389105 0.3846753 2.337831 3.389105 -0.3846766 2.337831 5.310585 0.2174547 1.962504 5.310585 -0.2174571 1.962504 5.303734 0.2174546 2.370019 5.303734 -0.2174571 2.370019 2.275232 0.4958572 1.827938 2.275232 -0.4958573 1.827938 2.265573 0.495857 2.40248 2.265573 -0.4958574 2.40248 -0.08403491 1.708862 1.942392 -0.8881765 3.258578 1.816866 0.8881776 3.258578 1.816866 0.08403503 1.708862 1.942392 -0.08403497 1.70337 2.269053 -0.888176 3.247992 2.4466 0.8881778 3.247991 2.4466 0.08403509 1.70337 2.269053 -0.3846754 3.395956 1.930316 0.3846767 3.395956 1.930316 -0.3846751 3.389105 2.337831 0.3846768 3.389105 2.337831 -0.2174544 5.310585 1.962504 0.2174575 5.310585 1.962504 -0.2174542 5.303734 2.370019 0.2174575 5.303734 2.370019 -0.495857 2.275232 1.827938 0.4958575 2.275232 1.827938 -0.4958568 2.265573 2.40248 0.4958575 2.265573 2.40248 -1.708862 -0.0840348 1.942392 -3.258578 -0.8881763 1.816866 -3.258578 0.8881779 1.816866 -1.708862 0.08403515 1.942392 -1.70337 -0.08403486 2.269053 -3.247992 -0.8881757 2.4466 -3.247991 0.8881781 2.4466 -1.70337 0.08403521 2.269053 -3.395956 -0.3846752 1.930316 -3.395956 0.384677 1.930316 -3.389105 -0.3846749 2.337831 -3.389105 0.3846771 2.337831 -5.310585 -0.217454 1.962504 -5.310585 0.2174579 1.962504 -5.303734 -0.2174538 2.370019 -5.303734 0.217458 2.370019 -2.275232 -0.4958568 1.827938 -2.275232 0.4958577 1.827938 -2.265573 -0.4958566 2.40248 -2.265573 0.4958577 2.40248</float_array>
+          <technique_common>
+            <accessor source="#CursorMesh-mesh-positions-array" count="80" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="CursorMesh-mesh-normals">
+          <float_array id="CursorMesh-mesh-normals-array" count="432">0 0.01125931 -0.9999366 -2.29383e-7 0.04486423 0.9989931 0.9287661 0.3706138 -0.006230413 -3.52119e-7 -0.6104866 0.7920265 -0.8077994 0.5893742 -0.009908437 0 0.9998586 -0.01680928 0 0.01680928 0.9998587 -0.2665855 -0.9636752 0.01620131 0.2665835 -0.9636757 0.01620161 2.38948e-7 -0.6367633 -0.7710594 0 -0.9998587 0.0168097 -0.9962089 -0.08698207 0.001462161 0.9962087 -0.08698266 0.001463055 3.09851e-7 -0.01680904 -0.9998587 -0.9287659 0.3706147 -0.006230771 0.8077999 0.5893736 -0.009908437 -1.78399e-7 0.2309148 0.972974 0 0.1980789 -0.9801862 -0.01125931 0 -0.9999366 -0.04486423 0 0.9989931 -0.3706138 0.9287661 -0.006230413 0.6104866 -3.52119e-7 0.7920265 -0.5893743 -0.8077994 -0.009908437 -0.9998586 0 -0.01680928 -0.01680928 0 0.9998587 0.9636752 -0.2665855 0.01620131 0.9636757 0.2665835 0.01620161 0.6367627 0 -0.7710598 0.9998587 0 0.0168097 0.08698201 -0.9962089 0.001462161 0.08698272 0.9962087 0.001463055 0.01680904 3.09851e-7 -0.9998587 -0.3706147 -0.9287658 -0.006230771 -0.5893735 0.8077999 -0.009908437 -0.2309148 -1.78399e-7 0.972974 -0.1980789 0 -0.9801862 0 -0.01125931 -0.9999366 0 -0.04486423 0.9989931 -0.9287661 -0.3706137 -0.006229281 5.15995e-7 0.6104863 0.7920267 0.8077994 -0.5893743 -0.009908437 0 -0.9998586 -0.01680928 0 -0.01680928 0.9998587 0.2665858 0.963675 0.01620131 -0.266583 0.9636757 0.01620161 1.7093e-7 0.636763 -0.7710595 0 0.9998587 0.0168097 0.9962089 0.08698195 0.001462161 -0.9962087 0.08698278 0.001463055 -3.09851e-7 0.01680904 -0.9998587 0.9287657 -0.3706148 -0.006230711 -0.8077999 -0.5893735 -0.009908437 1.78399e-7 -0.2309148 0.972974 0 -0.1980789 -0.9801862 0.01125931 0 -0.9999366 0.04486423 0 0.9989931 0.3706136 -0.9287661 -0.006229281 -0.6104863 5.15995e-7 0.7920267 0.5893743 0.8077993 -0.009908437 0.9998586 0 -0.01680928 0.01680928 0 0.9998587 -0.963675 0.2665859 0.01620131 -0.9636759 -0.266583 0.01620161 -0.636763 1.7093e-7 -0.7710595 -0.9998587 0 0.0168097 -0.08698189 0.9962089 0.001462161 -0.08698284 -0.9962087 0.001463055 -0.01680904 -3.09851e-7 -0.9998587 0.3706149 0.9287657 -0.006230771 0.5893734 -0.8078 -0.009908437 0.2309148 1.78399e-7 0.972974 0.1980789 0 -0.9801861 0 0.01125931 -0.9999366 0 0.04486411 0.9989931 0.928766 0.3706145 -0.006229341 -2.51391e-7 -0.6104874 0.7920261 -0.8077994 0.5893742 -0.009908437 0 0.9998587 -0.01680928 -3.09852e-7 0.01680922 0.9998587 -0.2665848 -0.9636753 0.01620066 0.2665851 -0.9636752 0.01619988 0 -0.6367619 -0.7710605 0 -0.9998587 0.0168097 -0.9962087 -0.08698213 0.001462042 0.9962087 -0.08698272 0.001462817 0 -0.0168091 -0.9998587 -0.9287659 0.3706147 -0.006230771 0.8077999 0.5893737 -0.009908258 0 0.230915 0.9729739 0 0.1980789 -0.9801861 -0.01125931 0 -0.9999366 -0.04486405 -2.29383e-7 0.9989931 -0.3706144 0.928766 -0.006229341 0.6104874 -2.51391e-7 0.7920261 -0.5893743 -0.8077993 -0.009908437 -0.9998587 0 -0.01680928 -0.01680922 -3.09852e-7 0.9998587 0.9636753 -0.2665848 0.01620066 0.9636753 0.2665851 0.01619988 0.6367614 2.37801e-7 -0.7710609 0.9998587 0 0.0168097 0.08698207 -0.9962087 0.001462042 0.08698278 0.9962087 0.001462817 0.0168091 0 -0.9998587 -0.3706147 -0.9287659 -0.006230771 -0.5893736 0.8077999 -0.009908258 -0.230915 0 0.9729739 -0.1980789 0 -0.9801861 0 -0.01125931 -0.9999366 2.29383e-7 -0.04486405 0.9989932 -0.928766 -0.3706142 -0.006230473 2.44597e-7 0.6104879 0.7920256 0.8077993 -0.5893743 -0.009908437 0 -0.9998587 -0.01680928 3.09852e-7 -0.01680922 0.9998587 0.2665852 0.9636752 0.01620066 -0.2665846 0.9636754 0.01619988 -2.37801e-7 0.6367607 -0.7710615 0 0.9998587 0.0168097 0.9962087 0.08698195 0.001462042 -0.9962087 0.08698284 0.001462757 0 0.0168091 -0.9998587 0.9287658 -0.3706148 -0.006230831 -0.8077999 -0.5893735 -0.009908318 0 -0.230915 0.9729739 0 -0.1980789 -0.9801861 0.01125931 0 -0.9999366 0.04486405 2.29383e-7 0.9989932 0.3706142 -0.928766 -0.006230413 -0.6104879 2.44597e-7 0.7920256 0.5893743 0.8077993 -0.009908437 0.9998587 0 -0.01680928 0.01680922 3.09852e-7 0.9998587 -0.9636752 0.2665852 0.01620066 -0.9636754 -0.2665846 0.01619988 -0.6367607 -2.37801e-7 -0.7710614 -0.9998587 0 0.0168097 -0.08698189 0.9962089 0.001462042 -0.08698296 -0.9962087 0.001462817 -0.0168091 0 -0.9998587 0.3706149 0.9287658 -0.006230831 0.5893735 -0.8077999 -0.009908258 0.230915 0 0.9729739 0.1980788 0 -0.9801861</float_array>
+          <technique_common>
+            <accessor source="#CursorMesh-mesh-normals-array" count="144" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="CursorMesh-mesh-vertices">
+          <input semantic="POSITION" source="#CursorMesh-mesh-positions"/>
+        </vertices>
+        <polylist material="Material-material" count="144">
+          <input semantic="VERTEX" source="#CursorMesh-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#CursorMesh-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 0 2 0 17 0 18 1 19 1 6 1 16 2 18 2 5 2 5 3 6 3 11 3 19 4 7 4 3 4 0 5 3 5 7 5 11 6 15 6 14 6 2 7 9 7 11 7 5 8 10 8 8 8 1 9 8 9 9 9 14 10 15 10 13 10 9 11 13 11 15 11 8 12 10 12 14 12 9 13 8 13 12 13 6 14 19 14 17 14 0 15 4 15 18 15 7 16 19 16 18 16 0 17 16 17 17 17 21 18 22 18 37 18 39 19 26 19 25 19 36 20 38 20 25 20 25 21 26 21 31 21 39 22 27 22 23 22 20 23 23 23 27 23 31 24 35 24 34 24 22 25 29 25 31 25 25 26 30 26 28 26 22 27 21 27 28 27 34 28 35 28 33 28 29 29 33 29 35 29 28 30 30 30 34 30 29 31 28 31 32 31 26 32 39 32 37 32 20 33 24 33 38 33 27 34 39 34 38 34 20 35 36 35 37 35 56 36 41 36 42 36 59 37 46 37 45 37 58 38 45 38 41 38 45 39 46 39 51 39 59 40 47 40 43 40 40 41 43 41 47 41 51 42 55 42 54 42 42 43 49 43 51 43 45 44 50 44 48 44 42 45 41 45 48 45 54 46 55 46 53 46 49 47 53 47 55 47 48 48 50 48 54 48 49 49 48 49 52 49 46 50 59 50 57 50 40 51 44 51 58 51 47 52 59 52 58 52 40 53 56 53 57 53 61 54 62 54 77 54 79 55 66 55 65 55 78 56 65 56 61 56 65 57 66 57 71 57 79 58 67 58 63 58 60 59 63 59 67 59 71 60 75 60 74 60 62 61 69 61 71 61 65 62 70 62 68 62 62 63 61 63 68 63 74 64 75 64 73 64 69 65 73 65 75 65 68 66 70 66 74 66 69 67 68 67 72 67 66 68 79 68 77 68 60 69 64 69 78 69 67 70 79 70 78 70 76 71 77 71 63 71 16 72 1 72 17 72 5 73 18 73 6 73 1 74 16 74 5 74 10 75 5 75 11 75 17 76 19 76 3 76 4 77 0 77 7 77 10 78 11 78 14 78 6 79 2 79 11 79 1 80 5 80 8 80 2 81 1 81 9 81 12 82 14 82 13 82 11 83 9 83 15 83 12 84 8 84 14 84 13 85 9 85 12 85 2 86 6 86 17 86 16 87 0 87 18 87 4 88 7 88 18 88 3 89 0 89 17 89 36 90 21 90 37 90 38 91 39 91 25 91 21 92 36 92 25 92 30 93 25 93 31 93 37 94 39 94 23 94 24 95 20 95 27 95 30 96 31 96 34 96 26 97 22 97 31 97 21 98 25 98 28 98 29 99 22 99 28 99 32 100 34 100 33 100 31 101 29 101 35 101 32 102 28 102 34 102 33 103 29 103 32 103 22 104 26 104 37 104 36 105 20 105 38 105 24 106 27 106 38 106 23 107 20 107 37 107 57 108 56 108 42 108 58 109 59 109 45 109 56 110 58 110 41 110 50 111 45 111 51 111 57 112 59 112 43 112 44 113 40 113 47 113 50 114 51 114 54 114 46 115 42 115 51 115 41 116 45 116 48 116 49 117 42 117 48 117 52 118 54 118 53 118 51 119 49 119 55 119 52 120 48 120 54 120 53 121 49 121 52 121 42 122 46 122 57 122 56 123 40 123 58 123 44 124 47 124 58 124 43 125 40 125 57 125 76 126 61 126 77 126 78 127 79 127 65 127 76 128 78 128 61 128 70 129 65 129 71 129 77 130 79 130 63 130 64 131 60 131 67 131 70 132 71 132 74 132 66 133 62 133 71 133 61 134 65 134 68 134 69 135 62 135 68 135 72 136 74 136 73 136 71 137 69 137 75 137 72 138 68 138 74 138 73 139 69 139 72 139 62 140 66 140 77 140 76 141 60 141 78 141 64 142 67 142 78 142 60 143 76 143 63 143</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="CursorBone_West_pose_matrix">
+      <source id="CursorBone_West_pose_matrix-input">
+        <float_array id="CursorBone_West_pose_matrix-input-array" count="15">0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_West_pose_matrix-input-array" count="15" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_West_pose_matrix-output">
+        <float_array id="CursorBone_West_pose_matrix-output-array" count="240">-0.01265121 0.9999197 4.5774e-8 -4.873609 4.00707e-7 5.08475e-8 -1 -2.99303e-7 -0.9999198 -0.01265116 -4.01318e-7 2.136769 0 0 0 1 -0.05122076 0.9986871 4.19436e-8 -4.729486 3.9848e-7 6.24359e-8 -1 -3.1284e-7 -0.9986872 -0.05122072 -4.01155e-7 2.164675 0 0 0 1 -0.1163043 0.9932135 3.03896e-8 -4.486199 3.93994e-7 7.67335e-8 -1 -3.46987e-7 -0.9932135 -0.1163043 -4.00244e-7 2.208608 0 0 0 1 -0.2071977 0.978299 1.13312e-8 -4.158901 3.86407e-7 9.34211e-8 -1 -3.99655e-7 -0.9782989 -0.2071977 -3.97378e-7 2.262126 0 0 0 1 -0.3204564 0.9472632 -1.43957e-8 -3.78032 3.74881e-7 1.11624e-7 -1 -4.67357e-7 -0.9472632 -0.3204564 -3.90881e-7 2.315643 0 0 0 1 -0.4485793 0.877496 -4.51293e-8 -3.390967 3.58978e-7 1.27323e-7 -1 -5.45708e-7 -0.8937429 -0.4404248 -3.79007e-7 2.359576 0 0 0 1 -0.5800124 0.7552317 -7.83832e-8 -3.024918 3.3919e-7 1.34696e-7 -1 -6.29868e-7 -0.8146076 -0.537736 -3.60575e-7 2.387483 0 0 0 1 -0.7015139 0.5973161 -1.11217e-7 -2.702599 3.17224e-7 1.30924e-7 -1 -7.14648e-7 -0.7126557 -0.5879776 -3.35651e-7 2.396832 0 0 0 1 -0.8022703 0.4308895 -1.40921e-7 -2.364301 2.95638e-7 1.16392e-7 -1 -7.61978e-7 -0.5969607 -0.5790833 -3.05852e-7 2.314825 0 0 0 1 -0.8772255 0.2832461 -1.65664e-7 -1.954158 2.76876e-7 9.48993e-8 -1 -7.35401e-7 -0.4800783 -0.5175631 -2.74021e-7 2.072214 0 0 0 1 -0.927457 0.1713324 -1.84744e-7 -1.507976 2.62376e-7 7.18028e-8 -1 -6.44974e-7 -0.3739296 -0.4249557 -2.4345e-7 1.702567 0 0 0 1 -0.9579285 0.09811178 -1.98382e-7 -1.086348 2.52345e-7 5.16279e-8 -1 -5.2081e-7 -0.2870069 -0.3274629 -2.17098e-7 1.283293 0 0 0 1 -0.9746206 0.05661239 -2.07279e-7 -0.7539401 2.46149e-7 3.68525e-8 -1 -4.03394e-7 -0.2238627 -0.2464708 -1.97131e-7 0.9136468 0 0 0 1 -0.9825321 0.03687961 -2.12212e-7 -0.5510259 2.42901e-7 2.81636e-8 -1 -3.24524e-7 -0.1860928 -0.1947169 -1.84832e-7 0.6710355 0 0 0 1 -0.9848077 0.03125662 -2.54389e-7 -0.4855385 2.90312e-7 3.26645e-8 -1 -2.97814e-7 -0.173648 -0.1772654 -2.29124e-7 0.589029 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_West_pose_matrix-output-array" count="15" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_West_pose_matrix-interpolation">
+        <Name_array id="CursorBone_West_pose_matrix-interpolation-array" count="15">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#CursorBone_West_pose_matrix-interpolation-array" count="15" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="CursorBone_West_pose_matrix-sampler">
+        <input semantic="INPUT" source="#CursorBone_West_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#CursorBone_West_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#CursorBone_West_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#CursorBone_West_pose_matrix-sampler" target="West/transform"/>
+    </animation>
+    <animation id="CursorBone_East_pose_matrix">
+      <source id="CursorBone_East_pose_matrix-input">
+        <float_array id="CursorBone_East_pose_matrix-input-array" count="15">0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_East_pose_matrix-input-array" count="15" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_East_pose_matrix-output">
+        <float_array id="CursorBone_East_pose_matrix-output-array" count="240">-1.04669e-7 -0.9999198 0.01265116 4.873609 -1 5.05866e-8 -3.90045e-7 -2.99332e-7 3.89374e-7 -0.01265116 -0.9999198 2.136769 0 0 0 1 -1.11887e-7 -0.9986872 0.05122071 4.729486 -1 4.27253e-8 -3.91769e-7 -2.76999e-7 3.89066e-7 -0.05122071 -0.9986872 2.164675 0 0 0 1 -1.33662e-7 -0.9932135 0.1163043 4.486199 -1 3.88865e-8 -3.94551e-7 -2.34689e-7 3.87351e-7 -0.1163043 -0.9932135 2.208608 0 0 0 1 -1.6958e-7 -0.978299 0.2071976 4.158901 -1 3.86757e-8 -3.98613e-7 -1.75772e-7 3.81949e-7 -0.2071977 -0.9782989 2.262126 0 0 0 1 -2.18065e-7 -0.9472633 0.3204563 3.780321 -1 4.15305e-8 -4.04338e-7 -1.06169e-7 3.69706e-7 -0.3204564 -0.9472632 2.315643 0 0 0 1 -2.75985e-7 -0.8774961 0.4485791 3.390967 -1 4.60746e-8 -4.12173e-7 -3.27801e-8 3.47326e-7 -0.4404247 -0.893743 2.359576 0 0 0 1 -3.38655e-7 -0.755232 0.5800123 3.024918 -1 5.0552e-8 -4.22553e-7 3.83831e-8 3.12589e-7 -0.5377359 -0.8146077 2.387483 0 0 0 1 -4.00535e-7 -0.5973162 0.7015139 2.702599 -1 5.37089e-8 -4.35795e-7 1.02923e-7 2.65619e-7 -0.5879776 -0.7126557 2.396832 0 0 0 1 -4.56514e-7 -0.4308899 0.8022701 2.364301 -1 5.42344e-8 -4.51854e-7 1.32674e-7 2.09459e-7 -0.5790831 -0.596961 2.314825 0 0 0 1 -5.03144e-7 -0.2832462 0.8772255 1.954158 -1 5.12318e-8 -4.70011e-7 1.00661e-7 1.4947e-7 -0.517563 -0.4800783 2.072214 0 0 0 1 -5.39104e-7 -0.1713326 0.927457 1.507976 -1 4.49098e-8 -4.88758e-7 1.57893e-8 9.18565e-8 -0.4249556 -0.3739298 1.702567 0 0 0 1 -5.64806e-7 -0.09811179 0.9579285 1.086349 -1 3.6775e-8 -5.06069e-7 -9.66036e-8 4.21932e-8 -0.3274628 -0.2870069 1.283293 0 0 0 1 -5.81573e-7 -0.05661241 0.9746207 0.7539406 -1 2.90168e-8 -5.1993e-7 -2.02221e-7 4.56379e-9 -0.2464708 -0.2238627 0.9136468 0 0 0 1 -5.90869e-7 -0.03687965 0.9825321 0.5510263 -1 2.36031e-8 -5.2879e-7 -2.7348e-7 -1.86154e-8 -0.1947169 -0.186093 0.6710355 0 0 0 1 -5.32886e-7 -0.03125663 0.9848078 0.4855385 -1 3.26645e-8 -4.59199e-7 -2.97814e-7 -9.89733e-8 -0.1772654 -0.173648 0.589029 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_East_pose_matrix-output-array" count="15" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_East_pose_matrix-interpolation">
+        <Name_array id="CursorBone_East_pose_matrix-interpolation-array" count="15">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#CursorBone_East_pose_matrix-interpolation-array" count="15" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="CursorBone_East_pose_matrix-sampler">
+        <input semantic="INPUT" source="#CursorBone_East_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#CursorBone_East_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#CursorBone_East_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#CursorBone_East_pose_matrix-sampler" target="East/transform"/>
+    </animation>
+    <animation id="CursorBone_North_pose_matrix">
+      <source id="CursorBone_North_pose_matrix-input">
+        <float_array id="CursorBone_North_pose_matrix-input-array" count="15">0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_North_pose_matrix-input-array" count="15" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_North_pose_matrix-output">
+        <float_array id="CursorBone_North_pose_matrix-output-array" count="240">4.0083e-7 4.02503e-8 -1 -4.78736e-7 0.0126512 -0.9999197 -3.51761e-8 4.873609 -0.9999198 -0.0126512 -4.01307e-7 2.136769 0 0 0 1 3.99028e-7 4.9922e-8 -1 -4.9311e-7 0.05122074 -0.9986871 -2.9418e-8 4.729486 -0.9986872 -0.05122075 -4.01062e-7 2.164675 0 0 0 1 3.9558e-7 5.84536e-8 -1 -5.28077e-7 0.1163043 -0.9932135 -1.20493e-8 4.486199 -0.9932135 -0.1163043 -3.99694e-7 2.208608 0 0 0 1 3.90244e-7 6.56828e-8 -1 -5.81425e-7 0.2071977 -0.978299 1.66002e-8 4.158901 -0.9782989 -0.2071977 -3.95385e-7 2.262126 0 0 0 1 3.82995e-7 7.12147e-8 -1 -6.49433e-7 0.3204563 -0.9472632 5.52742e-8 3.78032 -0.9472631 -0.3204564 -3.85619e-7 2.315643 0 0 0 1 3.74209e-7 7.29302e-8 -1 -7.27477e-7 0.4485791 -0.8774961 1.01475e-7 3.390967 -0.8937429 -0.4404247 -3.67767e-7 2.359576 0 0 0 1 3.64866e-7 6.84721e-8 -1 -8.10598e-7 0.5800121 -0.7552318 1.51464e-7 3.024918 -0.8146077 -0.5377358 -3.4006e-7 2.387483 0 0 0 1 3.56524e-7 5.79642e-8 -1 -8.93671e-7 0.7015138 -0.5973161 2.00822e-7 2.702599 -0.7126556 -0.5879776 -3.02593e-7 2.396832 0 0 0 1 3.50831e-7 4.35139e-8 -1 -9.39436e-7 0.80227 -0.4308898 2.45474e-7 2.364301 -0.596961 -0.5790831 -2.57797e-7 2.314825 0 0 0 1 3.48755e-7 2.85961e-8 -1 -9.12212e-7 0.8772254 -0.2832462 2.82669e-7 1.954158 -0.4800782 -0.5175632 -2.09947e-7 2.072214 0 0 0 1 3.50087e-7 1.63446e-8 -1 -8.21984e-7 0.9274569 -0.1713325 3.11352e-7 1.507976 -0.3739296 -0.4249557 -1.63992e-7 1.702567 0 0 0 1 3.53588e-7 8.1705e-9 -1 -6.98509e-7 0.9579283 -0.09811182 3.31853e-7 1.086348 -0.287007 -0.3274628 -1.24378e-7 1.283293 0 0 0 1 3.57589e-7 3.71361e-9 -1 -5.81819e-7 0.9746205 -0.05661239 3.45227e-7 0.7539401 -0.2238626 -0.2464708 -9.43629e-8 0.9136469 0 0 0 1 3.60601e-7 1.76866e-9 -1 -5.0341e-7 0.982532 -0.03687965 3.52642e-7 0.5510259 -0.1860929 -0.1947169 -7.5874e-8 0.6710356 0 0 0 1 4.01339e-7 7.24562e-9 -1 -4.76837e-7 0.9848076 -0.03125665 3.88252e-7 0.4855385 -0.1736481 -0.1772654 -1.09334e-7 0.589029 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_North_pose_matrix-output-array" count="15" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_North_pose_matrix-interpolation">
+        <Name_array id="CursorBone_North_pose_matrix-interpolation-array" count="15">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#CursorBone_North_pose_matrix-interpolation-array" count="15" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="CursorBone_North_pose_matrix-sampler">
+        <input semantic="INPUT" source="#CursorBone_North_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#CursorBone_North_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#CursorBone_North_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#CursorBone_North_pose_matrix-sampler" target="North/transform"/>
+    </animation>
+    <animation id="CursorBone_South_pose_matrix">
+      <source id="CursorBone_South_pose_matrix-input">
+        <float_array id="CursorBone_South_pose_matrix-input-array" count="15">0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_South_pose_matrix-input-array" count="15" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_South_pose_matrix-output">
+        <float_array id="CursorBone_South_pose_matrix-output-array" count="240">-1 0 -3.89414e-7 3.64068e-9 4.92654e-9 0.9999198 -0.01265116 -4.873609 3.89383e-7 -0.01265116 -0.9999198 2.136769 0 0 0 1 -1 -9.43254e-9 -3.89173e-7 2.1264e-8 1.05135e-8 0.9986872 -0.05122071 -4.729486 3.89145e-7 -0.05122071 -0.9986872 2.164675 0 0 0 1 -1 -1.79244e-8 -3.88368e-7 5.87914e-8 2.73661e-8 0.9932135 -0.1163043 -4.486199 3.87818e-7 -0.1163043 -0.9932135 2.208608 0 0 0 1 -1 -2.55213e-8 -3.86741e-7 1.13536e-7 5.51644e-8 0.978299 -0.2071976 -4.158901 3.83637e-7 -0.2071977 -0.9782989 2.262126 0 0 0 1 -1 -3.2101e-8 -3.84132e-7 1.80869e-7 9.26893e-8 0.9472633 -0.3204563 -3.780321 3.74161e-7 -0.3204564 -0.9472632 2.315643 0 0 0 1 -1 -3.64905e-8 -3.80611e-7 2.55246e-7 1.37517e-7 0.8774961 -0.4485791 -3.390967 3.5684e-7 -0.4404247 -0.893743 2.359576 0 0 0 1 -1 -3.69402e-8 -3.76679e-7 3.31338e-7 1.86021e-7 0.755232 -0.5800123 -3.024918 3.29956e-7 -0.5377359 -0.8146077 2.387483 0 0 0 1 -1 -3.29123e-8 -3.7333e-7 4.04449e-7 2.33912e-7 0.5973162 -0.7015139 -2.702599 2.93603e-7 -0.5879776 -0.7126557 2.396832 0 0 0 1 -1 -2.53916e-8 -3.71742e-7 4.41984e-7 2.77238e-7 0.4308899 -0.8022701 -2.364301 2.50138e-7 -0.5790831 -0.596961 2.314825 0 0 0 1 -1 -1.66836e-8 -3.72655e-7 4.12732e-7 3.13327e-7 0.2832462 -0.8772255 -1.954158 2.03709e-7 -0.517563 -0.4800783 2.072214 0 0 0 1 -1 -9.16721e-9 -3.75909e-7 3.26056e-7 3.41158e-7 0.1713326 -0.927457 -1.507976 1.59119e-7 -0.4249556 -0.3739298 1.702567 0 0 0 1 -1 -4.09577e-9 -3.80497e-7 2.09277e-7 3.6105e-7 0.09811179 -0.9579285 -1.086349 1.20682e-7 -0.3274628 -0.2870069 1.283293 0 0 0 1 -1 -1.39214e-9 -3.85031e-7 9.92354e-8 3.74026e-7 0.05661241 -0.9746207 -0.7539406 9.15592e-8 -0.2464708 -0.2238627 0.9136468 0 0 0 1 -1 -2.75676e-10 -3.88262e-7 2.51783e-8 3.81221e-7 0.03687965 -0.9825321 -0.5510263 7.36196e-8 -0.1947169 -0.186093 0.6710355 0 0 0 1 -1 -1.42109e-14 -3.89414e-7 0 3.83498e-7 0.03125663 -0.9848078 -0.4855385 6.76211e-8 -0.1772654 -0.173648 0.589029 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#CursorBone_South_pose_matrix-output-array" count="15" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="CursorBone_South_pose_matrix-interpolation">
+        <Name_array id="CursorBone_South_pose_matrix-interpolation-array" count="15">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#CursorBone_South_pose_matrix-interpolation-array" count="15" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="CursorBone_South_pose_matrix-sampler">
+        <input semantic="INPUT" source="#CursorBone_South_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#CursorBone_South_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#CursorBone_South_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#CursorBone_South_pose_matrix-sampler" target="South/transform"/>
+    </animation>
+  </library_animations>
+  <library_controllers>
+    <controller id="CursorBone_Cursor-skin" name="CursorBone">
+      <skin source="#CursorMesh-mesh">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="CursorBone_Cursor-skin-joints">
+          <Name_array id="CursorBone_Cursor-skin-joints-array" count="4">West East North South</Name_array>
+          <technique_common>
+            <accessor source="#CursorBone_Cursor-skin-joints-array" count="4" stride="1">
+              <param name="JOINT" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="CursorBone_Cursor-skin-bind_poses">
+          <float_array id="CursorBone_Cursor-skin-bind_poses-array" count="64">0 4.01339e-7 -1 2.12742 1 0 0 4.91966 0 -1 -4.01339e-7 7.97812e-7 0 0 0 1 0 -1 3.89414e-7 -8.84453e-7 -1 0 0 4.919659 0 -3.89414e-7 -1 2.12742 0 0 0 1 4.01339e-7 0 -1 2.12742 0 -1 0 4.91966 -1 0 -4.01339e-7 5.75013e-7 0 0 0 1 -1 0 3.89414e-7 -8.28448e-7 0 1 0 4.919659 -3.89414e-7 0 -1 2.12742 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#CursorBone_Cursor-skin-bind_poses-array" count="4" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="CursorBone_Cursor-skin-weights">
+          <float_array id="CursorBone_Cursor-skin-weights-array" count="151">0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0.9999999 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 2.06972e-6 0.999998 0 0 1 0 0 1 1.87535e-5 0.9999813 0 0 1 0 0 1 0 0 1 7.05689e-7 0.9999994 0 0 1 0 1 0 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#CursorBone_Cursor-skin-weights-array" count="151" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#CursorBone_Cursor-skin-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#CursorBone_Cursor-skin-bind_poses"/>
+        </joints>
+        <vertex_weights count="80">
+          <input semantic="JOINT" source="#CursorBone_Cursor-skin-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#CursorBone_Cursor-skin-weights" offset="1"/>
+          <vcount>2 2 1 2 2 2 2 2 1 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 2 3 3 3 2 3 2 3 2 3 3 3 3 3 2 3 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </vcount>
+          <v>0 0 3 1 0 2 3 3 3 4 0 5 3 6 0 7 3 8 0 9 3 10 0 11 3 12 0 13 3 14 3 15 0 16 3 17 3 18 0 19 3 20 0 21 3 22 0 23 3 24 0 25 3 26 0 27 3 28 0 29 3 30 0 31 3 32 0 33 3 34 0 35 3 36 0 37 1 38 0 39 1 40 0 41 1 42 0 43 1 44 0 45 1 46 0 47 1 48 0 49 1 50 0 51 1 52 0 53 1 54 0 55 1 56 0 57 1 58 0 59 1 60 0 61 1 62 0 63 1 64 0 65 1 66 0 67 1 68 0 69 1 70 0 71 1 72 0 73 1 74 0 75 1 76 0 77 1 78 2 79 0 80 1 81 2 82 0 83 1 84 2 85 1 86 2 87 0 88 1 89 2 90 0 91 1 92 2 93 0 94 1 95 2 96 1 97 2 98 0 99 1 100 2 101 1 102 2 103 0 104 1 105 2 106 1 107 2 108 0 109 1 110 2 111 0 112 1 113 2 114 0 115 1 116 2 117 0 118 1 119 2 120 0 121 1 122 2 123 1 124 2 125 0 126 1 127 2 128 1 129 2 130 0 131 0 132 0 133 0 134 0 135 0 136 0 137 0 138 0 139 0 140 0 141 0 142 0 143 0 144 0 145 0 146 0 147 0 148 0 149 0 150</v>
+        </vertex_weights>
+      </skin>
+    </controller>
+  </library_controllers>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="CursorBone" name="CursorBone" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <node id="West" name="West" sid="West" type="JOINT">
+          <matrix sid="transform">-4.91516e-8 0.9999999 4.91516e-8 -4.919659 4.01339e-7 4.91516e-8 -1 -2.97814e-7 -1 0 -4.01339e-7 2.12742 0 0 0 1</matrix>
+        </node>
+        <node id="East" name="East" sid="East" type="JOINT">
+          <matrix sid="transform">-9.83032e-8 -1 -1.91403e-14 4.919659 -1 4.91516e-8 -3.89414e-7 -2.97814e-7 3.89414e-7 0 -1 2.12742 0 0 0 1</matrix>
+        </node>
+        <node id="North" name="North" sid="North" type="JOINT">
+          <matrix sid="transform">4.01339e-7 4.02535e-8 -1 -4.76837e-7 4.02535e-8 -0.9999999 -4.02535e-8 4.919659 -1 -4.02535e-8 -4.01339e-7 2.12742 0 0 0 1</matrix>
+        </node>
+        <node id="South" name="South" sid="South" type="JOINT">
+          <matrix sid="transform">-1 0 -3.89414e-7 0 0 1 0 -4.919659 3.89414e-7 0 -1 2.12742 0 0 0 1</matrix>
+        </node>
+      </node>
+      <node id="Cursor" name="Cursor" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_controller url="#CursorBone_Cursor-skin">
+          <skeleton>#West</skeleton>
+          <skeleton>#East</skeleton>
+          <skeleton>#North</skeleton>
+          <skeleton>#South</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material-material" target="#Material-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
