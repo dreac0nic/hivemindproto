@@ -9,6 +9,8 @@ public class Commander : MonoBehaviour
 {
 	public Vector3 INFINITY { get { return new Vector3(-99999, -99999, -99999); } }
 
+	public HashSet<Commandable> SelectedUnits { get { return selected; }}
+
 	protected HashSet<Commandable> selected = new HashSet<Commandable>();
 	protected Player player;
 	private GameObject cursor;
