@@ -37,7 +37,27 @@ public class Commander : MonoBehaviour
 				}
 			} else
 				ClearSelection();
+		} else if(Input.GetButtonDown("Order") && selected.Count > 0) {
+			GameObject picked = PickObject();
+			RaycastHit hit;
+
+			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, Layers.Map)) {
+				if(!cursor)
+					cursor = (GameObject)Instantiate(Resources.Load("Cursor"));
+				else {
+					Destroy(cursor);
+					cursor = (GameObject)Instantiate(Resources.Load("Cursor"));
+				}
+
+				cursor.transform.position = hit.point;
+				cursor.transform.localScale = new Vector3(1, 1, 1);
+				Destroy(cursor, .6f);
+
+				foreach(Commandable unit in selected)
+					unit.GiveOrder("MOVE", hit.point.ToString());
+			}
 		}
+
 		// OLD CODE
 		/*
 		Selector selectGroup = transform.root.GetComponent<Selector>();
