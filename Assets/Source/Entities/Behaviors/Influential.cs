@@ -16,7 +16,7 @@ public class Influential : MonoBehaviour
 	*/
 	public float strength = 100;
 
-	private Renderer renderer;
+	private Renderer childRenderer;
 	private GameObject influenceBubble = null;
 	private Player player;
 
@@ -37,17 +37,19 @@ public class Influential : MonoBehaviour
 
 		influenceBubble.transform.localPosition = new Vector3(0f, 0f, 0f);
 
-		renderer = GetComponentInChildren<Renderer>();
+		childRenderer = GetComponentInChildren<Renderer>();
 
 		Influential.queens.Add(this);
 	}
 
 	void Update()
 	{
-		renderer.material = player.color;
+		childRenderer.material = player.color;
 
-		if(influenceBubble)
+		if(influenceBubble) {
+			influenceBubble.transform.rotation = Quaternion.identity;
 			influenceBubble.transform.localScale = 0.5f*(new Vector3(strength, strength, strength));
+		}
 	}
 
 	void OnDisable()
