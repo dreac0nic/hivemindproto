@@ -33,8 +33,10 @@ public class Commandable : MonoBehaviour
   }
 
   void Update() {
-    if(orders.Count > 0)
-      Debug.Log("I AM DOING " + orders.Peek().First + " AT " + orders.Peek().Second);
+    if(orders.Count > 0) {
+      Tuple<string, string> order = orders.Dequeue();
+      Debug.Log("I AM DOING " + order.First + " AT " + order.Second);
+    }
   }
 
   public void GiveOrder(string order, string data, bool clearOrders = true) {
