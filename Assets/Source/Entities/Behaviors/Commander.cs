@@ -38,7 +38,7 @@ public class Commander : MonoBehaviour
 			} else
 				ClearSelection();
 
-			// Check and ensure integrity of selection
+			// Check and ensure integrity of selection.
 			if(selected.Count > 1) {
 				IEnumerable<Commandable> query = from unit in selected where unit.GetComponent<Loyal>() && (!unit.GetComponent<Loyal>().Allegiance || unit.GetComponent<Loyal>().Allegiance != player.queen) select unit;
 
@@ -46,10 +46,16 @@ public class Commander : MonoBehaviour
 					RemoveSelection(unit);
 			}
 		} else if(Input.GetButtonDown("Order") && selected.Count > 0) {
-			// GameObject picked = PickObject();
+			GameObject picked = PickObject();
 			RaycastHit hit;
 
-			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, Layers.Map)) {
+			if(picked.GetComponent<UnitStats>()) {
+				foreach(Attacker unit in selected.Select(su => su.GetComponent<Attacker>()).Where(a => a != null))
+					unit.GetComponent<Commandable>().GiveOrder("ATTACK", picked.name);
+			} else if(picked.GetComponent<Harvestable>()) {
+				foreach(Harvester unit in selected.Select(su => su.GetComponent<Harvester>()).Where(a => a != null))
+					unit.GetComponent<Commandable>().GiveOrder("HARVEST", picked.name);
+			} else if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, Layers.Map)) {
 				if(!cursor)
 					cursor = (GameObject)Instantiate(Resources.Load("Cursor"));
 				else {
