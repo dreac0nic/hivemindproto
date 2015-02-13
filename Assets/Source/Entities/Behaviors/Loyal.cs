@@ -10,6 +10,13 @@ public class Loyal : MonoBehaviour
 	public float loyalty = 0;
 	public int duration = 0;
 
+	public bool CheckLoyalty(Influential playerQueen)
+	{
+		Influential controllingQueen = GetComponent<Influential>();
+		Movable action = GetComponent<Movable>();
+		return (allegiance == playerQueen) || (controllingQueen && controllingQueen == playerQueen);
+	}
+
 	void Start()
 	{
 
