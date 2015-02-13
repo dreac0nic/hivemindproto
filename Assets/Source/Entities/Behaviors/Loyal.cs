@@ -15,6 +15,13 @@ public class Loyal : MonoBehaviour
 
 	private Renderer renderer;
 
+	public bool CheckLoyalty(Influential playerQueen)
+	{
+		Influential controllingQueen = GetComponent<Influential>();
+		Movable action = GetComponent<Movable>();
+		return (allegiance == playerQueen) || (controllingQueen && controllingQueen == playerQueen);
+	}
+
 	void Start()
 	{
 		renderer = GetComponentInChildren<Renderer>();

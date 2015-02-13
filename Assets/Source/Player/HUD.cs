@@ -23,7 +23,7 @@ public class HUD : MonoBehaviour
 	{
 		GUI.skin = resourceSkin;
 		GUI.BeginGroup(new Rect(Screen.width/2 - RESOURCE_BAR_WIDTH/2, 0, RESOURCE_BAR_WIDTH, RESOURCE_BAR_HEIGHT));
-		GUI.Label(new Rect(0, 0, RESOURCE_BAR_WIDTH, RESOURCE_BAR_HEIGHT), "RESOURCES");
+		GUI.Label(new Rect(0, 0, RESOURCE_BAR_WIDTH, RESOURCE_BAR_HEIGHT), string.Format("RESOURCES: {0}", player.queen.GetComponent<Carry>().CurrentlyCarrying));
 		GUI.EndGroup();
 
 		GUI.skin = selectionSkin;

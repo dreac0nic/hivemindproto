@@ -263,6 +263,12 @@ MonoBehaviour:
   loyalty: 0
   duration: 0
 --- !u!114 &11481698
+  BaseUnitGameObject: {fileID: 0}
+  BirthingRate: 0
+  IsBirthing: 0
+  birthingPosition: {x: 0, y: 0, z: 0}
+  birthingRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &11468062
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -389,7 +395,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 181698}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 3.5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

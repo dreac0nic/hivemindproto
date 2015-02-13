@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movable : MonoBehaviour
 {
-	private Vector3 destination = Vector3.zero;
+	public Vector3 destination = Vector3.zero;
 	private NavMeshAgent navAgent;
 	private bool updated;
 	private bool following;
@@ -24,7 +24,6 @@ public class Movable : MonoBehaviour
 
 		if(!updated) {
 			navAgent.SetDestination(destination);
-
 			updated = true;
 		}
 

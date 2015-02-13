@@ -21,12 +21,14 @@ public class Commander : MonoBehaviour
 		
 		if(selectGroup)
 		{
-			HashSet<Selectable> selectedUnits = selectGroup.SelectedUnits;
+			HashSet<Selectable> selectedUnits =  new HashSet<Selectable>(selectGroup
+				.SelectedUnits
+				.Where(su => su.GetComponent<Influential>() == player.queen || (su.GetComponent<Loyal>() && su.GetComponent<Loyal>().CheckLoyalty(player.queen))));
 
 			// Breeding
-			foreach(Breed breedComponent in selectedUnits.Select(su => su.GetComponent<Breed>()).Where(b => b != null))
+			if (Input.GetKeyDown(KeyCode.B))
 			{
-				if (Input.GetKeyDown(KeyCode.B))
+				foreach(Breed breedComponent in selectedUnits.Select(su => su.GetComponent<Breed>()).Where(b => b != null))
 				{
 					if (breedComponent.IsBirthing)
 						breedComponent.StopBirthing();
@@ -53,8 +55,14 @@ public class Commander : MonoBehaviour
 				GameObject pickedObject = Selector.PickObject();
 				RaycastHit hitInfo;
 
-				// If the picked object is a unit, attack it!
-				if(pickedObject.GetComponent<UnitStats>() != null)
+				if(pickedObject.GetComponent<Carry>() != null)
+				{
+					foreach (Harvester harvestComponent in selectedUnits.Select(su => su.GetComponent<Harvester>()).Where(h => h != null))
+					{
+						harvestComponent.StartDepositing(pickedObject);
+					}
+				}
+				else if(pickedObject.GetComponent<UnitStats>() != null)
 				{
 					foreach (Attacker attackComponent in selectedUnits.Select(su => su.GetComponent<Attacker>()).Where(a => a != null))
 					{
@@ -88,10 +96,12 @@ public class Commander : MonoBehaviour
 					{
 						foreach (Selectable unit in selectGroup.SelectedUnits)
 						{
+							Loyal loyalty = unit.GetComponent<Loyal>();
+							Influential queen = unit.GetComponent<Influential>();
 							Movable action = unit.GetComponent<Movable>();
 
-							if (action)
-								action.Move(hitInfo.point);
+						if(action && ((loyalty && loyalty.allegiance == player.queen) || (queen && queen == player.queen)))
+							action.Move(hitInfo.point);
 						}
 					}
 				}
