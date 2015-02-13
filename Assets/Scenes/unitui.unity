@@ -129,6 +129,8 @@ MonoBehaviour:
   OverlayCamera: {fileID: 1699992686}
   FeralColor: {fileID: 2100000, guid: a6a96cb41a37fb547a60283552c00906, type: 2}
   FeralMinConvertPower: 0
+  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
+  UnitUI: {fileID: 162400, guid: 99799971c34be8f4b8b56ca13658ba14, type: 2}
 --- !u!1 &165137497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96432c683517e9408834eb393279bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
 --- !u!4 &655258036
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,7 +1203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96432c683517e9408834eb393279bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
 --- !u!1 &715723089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96432c683517e9408834eb393279bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
 --- !u!114 &791160885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96432c683517e9408834eb393279bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
 --- !u!114 &967876334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,7 +2097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96432c683517e9408834eb393279bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
 --- !u!114 &1069614611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3578,7 +3575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96432c683517e9408834eb393279bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectMarker: {fileID: 163512, guid: 242137ed05954b743b8ab295dd8bfd33, type: 2}
 --- !u!4 &2121527413
 Transform:
   m_ObjectHideFlags: 0
