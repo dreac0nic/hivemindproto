@@ -973,6 +973,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 5
   Position: {x: 0, y: 0, z: 0}
+  UnitAnimator: {fileID: 0}
 --- !u!114 &655258032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,6 +1158,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 5
   Position: {x: 0, y: 0, z: 0}
+  UnitAnimator: {fileID: 0}
 --- !u!195 &672456802
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1359,6 +1361,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+  UnitAnimator: {fileID: 0}
 --- !u!195 &791160881
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1789,6 +1792,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 5
   Position: {x: 0, y: 0, z: 0}
+  UnitAnimator: {fileID: 0}
 --- !u!114 &967876338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,6 +2055,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+  UnitAnimator: {fileID: 0}
 --- !u!195 &1069614607
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3607,6 +3612,7 @@ MonoBehaviour:
   Hunger: 0
   Speed: 0
   Position: {x: 0, y: 0, z: 0}
+  UnitAnimator: {fileID: 0}
 --- !u!114 &2121527416
 MonoBehaviour:
   m_ObjectHideFlags: 0

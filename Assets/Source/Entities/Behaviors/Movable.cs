@@ -8,19 +8,19 @@ public class Movable : MonoBehaviour
 	private bool updated;
 	private bool following;
 	private GameObject unitFollowing;
-	private Animator animator;
+	private UnitStats unitStats;
 
 	void Start()
 	{
 		navAgent = GetComponent<NavMeshAgent>();
-		animator = GetComponentInChildren<Animator>();
+		unitStats = GetComponentInChildren<UnitStats>();
 
 		updated = true;
 	}
 
 	void Update()
 	{
-		if(!animator) {Debug.Log("Failedness on " + this.name);}
+		if(!unitStats.UnitAnimator) {Debug.Log("Failedness on " + this.name);}
 
 		if(!updated) {
 			navAgent.SetDestination(destination);
@@ -30,13 +30,13 @@ public class Movable : MonoBehaviour
 		if (following)
 			navAgent.SetDestination(unitFollowing.transform.position);
 
-		if(animator)
+		if(unitStats.UnitAnimator)
 		{
 			if(navAgent.remainingDistance > navAgent.stoppingDistance) {
-				animator.SetBool("Walk", true);
+				unitStats.UnitAnimator.SetBool("Walk", true);
 			}
 			else {
-				animator.SetBool("Walk", false);
+				unitStats.UnitAnimator.SetBool("Walk", false);
 			}
 		}
 	}

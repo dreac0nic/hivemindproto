@@ -10,9 +10,11 @@ public class UnitStats : MonoBehaviour
 	public int Hunger;
 	public float Speed;
 	public Vector3 Position;
+	public Animator UnitAnimator;
 
 	void Start()
 	{
+		UnitAnimator = GetComponentInChildren<Animator>();
 	}
 
 	void Update()

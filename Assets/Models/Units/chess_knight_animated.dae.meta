@@ -20,6 +20,7 @@ ModelImporter:
     4300000: knight
     7400000: Walk
     7400002: Idle
+    7400004: Attack
     9500000: //RootNode
     13700000: knight
   materials:
@@ -83,6 +84,46 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 29
       lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: knight
+        weight: 1
+      - path: knight_armature
+        weight: 1
+      - path: knight_armature/Root
+        weight: 1
+      - path: knight_armature/Root/Base
+        weight: 1
+      - path: knight_armature/Root/Body
+        weight: 1
+      - path: knight_armature/Root/Body/Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 56
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
