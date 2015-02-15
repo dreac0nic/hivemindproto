@@ -4,12 +4,6 @@ using System.Collections.Generic;
 
 public class Influential : MonoBehaviour
 {
-	private static HashSet<Influential> queens = new HashSet<Influential>();
-	public static HashSet<Influential> Queens {
-		get {
-			return queens;
-		}
-	}
 
 	/* A single "strength" modifier. This encompasses both the power and distance of transmission.
 	* For now, merely specifies distance, but later the algorithm should be tweaked appropriately.
@@ -20,12 +14,13 @@ public class Influential : MonoBehaviour
 	private GameObject influenceBubble = null;
 	private Player player;
 
-	public Player Player {
+	private static HashSet<Influential> queens = new HashSet<Influential>();
+
+	public Player Player { get; set; }
+
+	public static HashSet<Influential> Queens {
 		get {
-			return player;
-		}
-		set {
-			player = value;
+			return queens;
 		}
 	}
 
@@ -44,7 +39,7 @@ public class Influential : MonoBehaviour
 
 	void Update()
 	{
-		renderer.material = player.color;
+		renderer.material = Player.color;
 
 		if(influenceBubble)
 			influenceBubble.transform.localScale = 0.5f*(new Vector3(strength, strength, strength));

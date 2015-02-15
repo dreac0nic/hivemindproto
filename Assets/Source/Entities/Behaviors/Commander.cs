@@ -80,7 +80,9 @@ public class Commander : MonoBehaviour
 				{
 					// Spawn a marker
 					if (!cursor)
+					{
 						cursor = (GameObject)Instantiate(Resources.Load("Cursor"));
+					}
 					else
 					{
 						Destroy (cursor);
