@@ -12,17 +12,10 @@ public class Influential : MonoBehaviour
 
 	private Renderer renderer;
 	private GameObject influenceBubble = null;
-	private Player player;
-
-	private static HashSet<Influential> queens = new HashSet<Influential>();
 
 	public Player Player { get; set; }
 
-	public static HashSet<Influential> Queens {
-		get {
-			return queens;
-		}
-	}
+	public static HashSet<Influential> Queens {	get; private set; }
 
 	void Start()
 	{
@@ -34,7 +27,10 @@ public class Influential : MonoBehaviour
 
 		renderer = GetComponentInChildren<Renderer>();
 
-		Influential.queens.Add(this);
+		if(Queens == null)
+			Queens = new HashSet<Influential>();
+
+		Influential.Queens.Add(this);
 	}
 
 	void Update()
@@ -47,14 +43,14 @@ public class Influential : MonoBehaviour
 
 	void OnDisable()
 	{
-		if(Influential.queens.Contains(this))
-			Influential.queens.Remove(this);
+		if(Influential.Queens.Contains(this))
+			Influential.Queens.Remove(this);
 	}
 
 	void OnDestroy()
 	{
-		if(Influential.queens.Contains(this))
-			Influential.queens.Remove(this);
+		if(Influential.Queens.Contains(this))
+			Influential.Queens.Remove(this);
 	}
 
 	// Returns the power at the given point of the influence bubble.
