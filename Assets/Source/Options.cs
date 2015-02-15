@@ -27,6 +27,8 @@ namespace HiveMind
 		// Unit Options
 		public Material FeralColor;
 		public float FeralMinConvertPower = 0f;
+		public GameObject SelectMarker;
+		public GameObject UnitUI;
 
 		void Start()
 		{

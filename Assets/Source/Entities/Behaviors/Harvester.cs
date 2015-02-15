@@ -10,7 +10,7 @@ public class Harvester : MonoBehaviour
 	public float DepositRetryRate;
 	public int CarryingCapacity;
 	public int CurrentlyCarrying;
-
+	
 	private GameObject resourceBeingHarvested;
 	private GameObject carrierBeingDepositedTo;
 	private Harvestable harvestFrom;
@@ -24,6 +24,7 @@ public class Harvester : MonoBehaviour
 		unitStats = GetComponent<UnitStats>();
 		movable = GetComponent<Movable>();
 		CurrentlyCarrying = 0;
+		unitStats = GetComponent<UnitStats>();
 	}
 
 	public void StartDepositing(GameObject carrier)
@@ -73,6 +74,7 @@ public class Harvester : MonoBehaviour
 		float distanceToResouce = Vector3.Distance(resourceBeingHarvested.transform.position, unitStats.Position);
 		if (distanceToResouce <= HarvestRange)
 		{
+			unitStats.UnitAnimator.SetTrigger("Harvest");
 			CurrentlyCarrying += 1;
 			harvestFrom.ResourcesLeft -= 1;
 		}

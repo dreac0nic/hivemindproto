@@ -47,6 +47,7 @@ ModelImporter:
     4300006: bishop
     7400000: Walk
     7400002: Idle
+    7400004: Harvest
     9500000: //RootNode
     13700000: bishop
     13700002: Cylinder
@@ -111,6 +112,46 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 29
       lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bishop
+        weight: 1
+      - path: bishop_armature
+        weight: 1
+      - path: bishop_armature/Root
+        weight: 1
+      - path: bishop_armature/Root/Base
+        weight: 1
+      - path: bishop_armature/Root/Body
+        weight: 1
+      - path: bishop_armature/Root/Body/Head
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Harvest
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 62
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

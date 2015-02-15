@@ -33,6 +33,7 @@ public class Attacker : MonoBehaviour
 		float distanceToOtherUnit = Vector3.Distance(otherStats.Position, unitStats.Position);
 		if (distanceToOtherUnit <= AttackRange)
 		{
+			unitStats.UnitAnimator.SetTrigger("Attack");
 			otherStats.Health -= AttackDamage;
 		}
 		else
