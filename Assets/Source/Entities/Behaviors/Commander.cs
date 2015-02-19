@@ -7,8 +7,7 @@ using System.Collections.Generic;
 
 public class Commander : MonoBehaviour
 {
-	// Get rid of these after testing movement
-	private GameObject tempCircle;
+	private GameObject cursor;
 	private Player player;
 
 	void Start()
@@ -35,6 +34,18 @@ public class Commander : MonoBehaviour
 						breedComponent.StopBirthing();
 					else
 						breedComponent.StartBirthing();
+				}
+			}
+
+			// Test hurting
+			if(Input.GetKeyDown(KeyCode.H))
+			{
+				foreach(UnitStats unit in selectedUnits.Select(su => su.GetComponent<UnitStats>()).Where(b => b != null))
+				{
+					if(unit.Health > 0)
+						unit.Health -= 5;
+					else
+						unit.Health = unit.MaxHealth;
 				}
 			}
 
@@ -68,11 +79,19 @@ public class Commander : MonoBehaviour
 				else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, Layers.Map))
 				{
 					// Spawn a marker
-					if (!tempCircle)
-						tempCircle = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+					if (!cursor)
+					{
+						cursor = (GameObject)Instantiate(Resources.Load("Cursor"));
+					}
+					else
+					{
+						Destroy (cursor);
+						cursor = (GameObject) Instantiate(Resources.Load("Cursor"));
+					}
 
-					tempCircle.transform.position = hitInfo.point;
-					tempCircle.transform.localScale = new Vector3(10, 10, 10);
+					cursor.transform.position = hitInfo.point;
+					cursor.transform.localScale = new Vector3(1, 1, 1);
+					Destroy(cursor, .6f);
 
 					// Apply movement to each selected unit.
 					if (selectGroup)

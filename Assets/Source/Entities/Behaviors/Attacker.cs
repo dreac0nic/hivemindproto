@@ -7,6 +7,14 @@ public class Attacker : MonoBehaviour
 	public float AttackRange;
 
 	private GameObject otherUnit;
+	private UnitStats unitStats;
+	private Movable movable;
+
+	void Start()
+	{
+		unitStats = GetComponent<UnitStats>();
+		movable = GetComponent<Movable>();
+	}
 
 	public void StartAttacking(GameObject otherUnit)
 	{
@@ -21,14 +29,16 @@ public class Attacker : MonoBehaviour
 
 	public void AttackUnit()
 	{
-		float distanceToOtherUnit = Vector3.Distance(otherUnit.GetComponent<UnitStats>().Position, GetComponent<UnitStats>().Position);
+		UnitStats otherStats = otherUnit.GetComponent<UnitStats>();
+		float distanceToOtherUnit = Vector3.Distance(otherStats.Position, unitStats.Position);
 		if (distanceToOtherUnit <= AttackRange)
 		{
-			otherUnit.GetComponent<UnitStats>().Health -= AttackDamage;
+			unitStats.UnitAnimator.SetTrigger("Attack");
+			otherStats.Health -= AttackDamage;
 		}
 		else
 		{
-			GetComponent<Movable>().Follow(otherUnit, AttackRange);
+			movable.Follow(otherUnit, AttackRange);
 		}
 	}
 }
